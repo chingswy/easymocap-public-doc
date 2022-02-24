@@ -28,13 +28,13 @@ This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^
     <br>
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/mv1p-dance-smpl.gif" width="80%">
     <br>
-    <sup>Videos are from ZJU-MoCap, with 23 calibrated and synchronized cameras.<sup/>
+    <sup>Videos are from ZJU-MoCap, with 23 calibrated and synchronized cameras.</sup>
 </div> -->
 
 <div align="center">
     <img src="doc/feng/mano.gif" width="80%">
     <br>
-    <sup>Captured with 8 cameras.<sup/>
+    <sup>Captured with 8 cameras.</sup>
 </div>
 
 ### Internet video with a mirror
@@ -44,12 +44,12 @@ This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^
 <div align="center">
     <img src="https://raw.githubusercontent.com/zju3dv/Mirrored-Human/main/doc/assets/smpl-avatar.gif" width="80%">
     <br>
-    <sup>The raw video is from <a href="https://www.youtube.com/watch?v=KOCJJ27hhIE">Youtube<a/>.<sup/>
+    <sup>The raw video is from <a href="https://www.youtube.com/watch?v=KOCJJ27hhIE">Youtube</a>.</sup>
 </div>
 
 <!-- <div align="center">
     <img src="doc/imocap/mv1p-mirror.gif" width="80%"><br/>
-    <sup>Captured with 6 cameras and a mirror<sup/>
+    <sup>Captured with 6 cameras and a mirror</sup>
 </div> -->
 
 ### Multiple Internet videos with a specific action (Coming soon)
@@ -58,7 +58,7 @@ This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^
 
 <!-- <div align="center">
     <img src="doc/imocap/imocap.gif" width="80%"><br/>
-    <sup>Internet videos of Roger Federer's serving<sup/>
+    <sup>Internet videos of Roger Federer's serving</sup>
 </div> -->
 
 ### Multiple views of multiple people
@@ -67,7 +67,7 @@ This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^
 
 <!-- <div align="center">
     <img src="doc/assets/mvmp1f.gif" width="80%"><br/>
-    <sup>Captured with 8 consumer cameras<sup/>
+    <sup>Captured with 8 consumer cameras</sup>
 </div> -->
 
 ### Novel view synthesis from sparse views
@@ -76,12 +76,12 @@ This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^
 <!-- <div align="center">
     <img src="doc/neuralbody/sida-frame0.jpg" width="80%"><br/>
     <img src="doc/neuralbody/sida.gif" width="80%"><br/>
-    <sup>Captured with 8 consumer cameras<sup/>
+    <sup>Captured with 8 consumer cameras</sup>
 </div> -->
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/female-ballet.gif" width="80%"><br/>
-    <sup>Novel view synthesis for chanllenge motion(coming soon)<sup/>
+    <sup>Novel view synthesis for chanllenge motion(coming soon)</sup>
 </div>
 
     
@@ -93,12 +93,12 @@ If you would like to download the ZJU-Mocap dataset, please sign the [agreement]
 
 <!-- <div align="center">
     <img src="doc/assets/ZJU-MoCap-lightstage.jpg" width="80%"><br/>
-    <sup>LightStage: captured with LightStage system<sup/>
+    <sup>LightStage: captured with LightStage system</sup>
 </div> -->
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/mirrored-human.jpg" width="80%"><br/>
-    <sup>Mirrored-Human: collected from the Internet<sup/>
+    <sup>Mirrored-Human: collected from the Internet</sup>
 </div>
 
 ## Other features
@@ -123,7 +123,7 @@ If you would like to download the ZJU-Mocap dataset, please sign the [agreement]
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/calib_intri.jpg" width="40%">
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/calib_extri.jpg" width="40%">
     <br>
-    <sup>Calibration for intrinsic and extrinsic parameters<sup/>
+    <sup>Calibration for intrinsic and extrinsic parameters</sup>
 </div>
 
 ### [Annotator](apps/annotation/Readme.md)
@@ -132,7 +132,7 @@ If you would like to download the ZJU-Mocap dataset, please sign the [agreement]
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/annot_keypoints.jpg" width="40%">
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/annot_mask.jpg" width="40%">
     <br>
-    <sup>Annotator for bounding box, keypoints and mask<sup/>
+    <sup>Annotator for bounding box, keypoints and mask</sup>
 </div>
 
 ### Other
