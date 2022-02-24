@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Install
-nav_order: 2
+title: Development
+nav_order: 4
 has_children: true
 ---
 
-# Install
+# Development
 {: .no_toc }
 
 1. TOC

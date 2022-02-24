@@ -1,5 +1,18 @@
+---
+layout: default
+title: Prepare SMPL models
+parent: Install
+nav_order: 1
+---
 
-# Download Model
+
+# Prepare SMPL models
+
+{: .no_toc }
+
+1. TOC
+{:toc}
+---
 
 After we build EasyMocap v0.1, some models were updated. So you should make sure you have registered and downloaded the newest model.
 

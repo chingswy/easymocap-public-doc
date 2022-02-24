@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Install
+title: Quick Start
 nav_order: 2
 has_children: true
 ---
 
-# Install
+# Quick Start
 {: .no_toc }
 
 1. TOC
