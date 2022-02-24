@@ -67,8 +67,6 @@ python3 apps/vis3d/vis_smpl.py --cfg config/model/mano.yml
 python3 apps/vis3d/vis_smpl.py --cfg config/model/smplh.yml
 ```
 
-## VPoser
-
 ## FLAME
 
 TODO: Download
