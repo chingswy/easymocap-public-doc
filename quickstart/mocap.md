@@ -16,7 +16,9 @@ nav_order: 1
 
 
 ```bash
+# triangulate the multi-view 2D detections
 python3 apps/fit/triangulate1p.py --cfg_data config/data/mv1p.yml --opt_data args.path ${data} args.out ${data}/output-keypoints3d --cfg_exp config/recon/mv1p-total.yml
+# copy the output to ${root}
 cp -r ${data}/output-keypoints3d/keypoints3d ${data}
 ```
 
