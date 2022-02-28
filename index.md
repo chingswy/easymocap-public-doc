@@ -1,7 +1,6 @@
 ---
 layout: default
 title: EasyMocap
-nav_order: 1
 ---
 
 <div align="center">
@@ -135,9 +134,10 @@ If you would like to download the ZJU-Mocap dataset, please sign the [agreement]
     <sup>Annotator for bounding box, keypoints and mask</sup>
 </div>
 
-### Other
-- [Pose guided synchronization](./doc/todo.md) (comming soon)
-- [Exporting of multiple data formats(bvh, asf/amc, ...)](./doc/02_output.md)
+### [Export]
+
+Our results can be converted to multiple data formats(bvh, asf/amc, ...).
+
 
 ## Updates
 - 12/25/2021: Support mediapipe keypoints detector.
