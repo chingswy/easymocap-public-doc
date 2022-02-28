@@ -27,7 +27,7 @@ See [How to prepare your dataset]() for more details.
 ```bash
 data=/path/to/dataset
 #! TODO
-python3 apps/demo/mv1p.py xxxxxx
+python3 apps/demo/mocap.py ${data}
 ```
 
 ## Check the visualization results
@@ -36,7 +36,7 @@ The visualization results can be found in `${data}/output-smpl-3d/smplmesh.mp4`
 
 
 
-## Step-by-step debug
+## :bug: Step-by-step debug
 
 If everything works well, you can skip this tutorial. If something bad happened, you should check the process step-by-step.
 

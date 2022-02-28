@@ -9,6 +9,7 @@ logo: "images/logo_horizontal_color.png"
 
 plugins:
   - jekyll-spaceship # 暂时不支持这个插件
+  - jemoji
 
 jekyll-spaceship:
   # default enabled processors

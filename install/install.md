@@ -11,3 +11,10 @@ has_children: true
 1. TOC
 {:toc}
 ---
+
+Create a conda environment and activate it.
+
+```bash
+conda create -n easymocap python=3.7 -y
+conda activate easymocap
+```
