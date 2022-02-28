@@ -12,32 +12,69 @@ nav_order: 1
 {:toc}
 ---
 
+## Prepare dataset
 
+### Test on ZJU-MoCap
 
+Download our demo dataset [here]() and extract the dataset.
+
+### Test on your own dataset
+
+See [How to prepare your dataset]() for more details.
+
+## Run the demo code
 
 ```bash
-python3 apps/fit/triangulate1p.py --cfg_data config/data/mv1p.yml --opt_data args.path ${data} args.out ${data}/output-keypoints3d --cfg_exp config/recon/mv1p-total.yml
-cp -r ${data}/output-keypoints3d/keypoints3d ${data}
+data=/path/to/dataset
+#! TODO
+python3 apps/demo/mv1p.py xxxxxx
 ```
+
+## Check the visualization results
+
+The visualization results can be found in `${data}/output-smpl-3d/smplmesh.mp4`
+
 
 
 ## Step-by-step debug
 
+If everything works well, you can skip this tutorial. If something bad happened, you should check the process step-by-step.
+
 ### 1. Check the datasets
+
+Make sure that:
+
+1. The dataset is synchronized
+2. The 2D detections are almost right
+
 
 ```bash
 python3 apps/fit/test_dataset.py --cfg_data config/data/mv1p.yml --opt_data args.path ${data} args.out ${data}/output-keypoints3d
 ```
 
-### 2. Check the triangulation results
+### 2. Check the calibration
+
+Make sure that:
+
+### 3. Run the triangulation code
+
+```bash
+python3 apps/fit/triangulate1p.py --cfg_data config/data/mv1p.yml --opt_data args.path ${data} args.out ${data}/output-keypoints3d --cfg_exp config/recon/mv1p-total.yml
+```
+
+### 4. Check the triangulation results
 
 TODO
 
-### 3. Check the fitting results
+### 5. Run the fitting code
 
-report for 3D keypoints:
+```bash
+python3 apps/fit/run_mocap.py ${data} --name smpl-3d
+```
+
+### 6. Check the fitting results
+
+<!-- report for 3D keypoints:
 it reports the MPJPE error without root alignment.
 
-report for smooth terms:
-
-TODO: It reports the velocity.
+report for smooth terms: -->
