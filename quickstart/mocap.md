@@ -20,13 +20,12 @@ Download our demo dataset [here]() and extract the dataset.
 
 ### Test on your own dataset
 
-See [How to prepare your dataset]() for more details.
+See [Prepare Your MoCap Dataset](./prepare_mocap.md) for more details.
 
 ## Run the demo code
 
 ```bash
 data=/path/to/dataset
-#! TODO
 python3 apps/demo/mocap.py ${data}
 ```
 
@@ -38,7 +37,9 @@ The visualization results can be found in `${data}/output-smpl-3d/smplmesh.mp4`
 
 ## :bug: Step-by-step debug
 
-If everything works well, you can skip this tutorial. If something bad happened, you should check the process step-by-step.
+If everything works well, you can skip this. 
+
+If something bad happened, you should check the process step-by-step.
 
 ### 1. Check the datasets
 
@@ -49,6 +50,9 @@ Make sure that:
 
 
 ```bash
+# use the annotation tool to check the 2D keypoints
+python3 apps/annotation/annot_keypoints.py ${data}
+# check the dataset
 python3 apps/fit/test_dataset.py --cfg_data config/data/mv1p.yml --opt_data args.path ${data} args.out ${data}/output-keypoints3d
 ```
 
