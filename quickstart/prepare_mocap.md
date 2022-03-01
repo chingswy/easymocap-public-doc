@@ -14,13 +14,13 @@ nav_order: 3
 
 ## Capture and Synchronize
 
-TODO
+See [Capture](./capture.md)
 
 ## Calibrate Your Cameras
 
-TODO
+See [Calibration](./calibration.md)
 
 ## Extract the 2D keypoints
 
-TODO
+See [2D Estimation](./estimate2d.md)
 
