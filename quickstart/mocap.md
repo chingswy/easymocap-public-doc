@@ -33,7 +33,24 @@ python3 apps/demo/mocap.py ${data}
 
 The visualization results can be found in `${data}/output-smpl-3d/smplmesh.mp4`
 
+## Demo on 3D hand keypoints
 
+Download demo dataset [here](../datasets/ROM04_RT_Occlusion.zip) and extract the dataset.
+
+```bash
+data=/path/to/ROM04_RT_Occlusion
+python3 apps/fit/run_mocap.py ${data} --mode handr-kpts3d
+```
+
+Results can be found in `${data}/output-handr-kpts3d`.
+
+<div align="center">
+    <img src="../videos/mocap-handr-k3d.mp4" width="80%">
+    <br>
+    <sup>Input 3D keypoints(left) and output MANO mesh(right) without smoothing.</sup>
+    <br>
+    <sup>Data comes from <a href="https://mks0601.github.io/InterHand2.6M/">InterHand2.6M dataset</a>/test/Capture0/ROM04_RT_Occlusion.</sup>
+</div>
 
 ## :bug: Step-by-step debug
 
