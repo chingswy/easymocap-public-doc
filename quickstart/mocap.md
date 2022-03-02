@@ -33,6 +33,25 @@ python3 apps/demo/mocap.py ${data}
 
 The visualization results can be found in `${data}/output-smpl-3d/smplmesh.mp4`
 
+## Demo on monocular videos
+
+Download demo dataset [here](../datasets/1v1p-test.zip) and extract the dataset.
+
+```bash
+data=/path/to/dataset
+python3 apps/demo/mocap.py ${data} --mode mono-smpl --mono
+```
+
+<div align="center">
+    <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-cxk.mp4" type="video/mp4">
+    </video>
+    <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-wa.mp4" type="video/mp4">
+    </video>
+    <br>
+    <sup>Videos come from <a href="https://www.youtube.com/watch?v=GLu5YwiAtC4">Youtube</a> and <a href="https://www.bilibili.com/video/BV12X4y1c7AD?p=1">Bilibili</a>.</sup>
+</div>
+
+
 ## Demo on 3D hand keypoints
 
 Download demo dataset [here](../datasets/ROM04_RT_Occlusion.zip) and extract the dataset.
