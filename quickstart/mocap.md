@@ -45,7 +45,8 @@ python3 apps/fit/run_mocap.py ${data} --mode handr-kpts3d
 Results can be found in `${data}/output-handr-kpts3d`.
 
 <div align="center">
-    <img src="../videos/mocap-handr-k3d.mp4" width="80%">
+    <video width="70%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-handr-k3d.mp4" type="video/mp4">
+    </video>
     <br>
     <sup>Input 3D keypoints(left) and output MANO mesh(right) without smoothing.</sup>
     <br>
