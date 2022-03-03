@@ -25,9 +25,9 @@ The visualization results can be found in `${data}/output-smpl-3d/smplmesh.mp4`
 
 Optionally, you can change the mode for other models:
 
-|Model|SMPL|`manol-3d`|
-|----|----|----|
-|Results|<video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-cxk.mp4" type="video/mp4"></video>|<video width="40%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-cxk.mp4" type="video/mp4"></video>|
+|Model|SMPL|MANO|
+|:----:|:----:|:----:|
+|Results|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-cxk.mp4" type="video/mp4"></video>|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-cxk.mp4" type="video/mp4"></video>|
 
 
 ## Demo on monocular videos
