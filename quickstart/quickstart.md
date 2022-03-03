@@ -14,20 +14,27 @@ has_children: true
 
 ## Demo on multiple calibrated cameras
 
-Download our demo dataset [here]() and extract the dataset. See [Prepare Your MoCap Dataset](./prepare_mocap.md) for more details.
+Download our demo dataset [here]() and extract the dataset. If you want to run this code on your own dataset, see [Prepare Your MoCap Dataset](./prepare_mocap.md) for more details.
 
 ```bash
 data=/path/to/dataset
-python3 apps/demo/mocap.py ${data} --mode vposer-3d
+python3 apps/demo/mocap.py ${data} --mode vposerh-3d
 ```
 
-The visualization results can be found in `${data}/output-smpl-3d/smplmesh.mp4`
+The visualization results can be found in `${data}/output-vposerh-3d/smplmesh.mp4`
+
+<div align="center">
+    <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-smplh.mp4" type="video/mp4">
+    </video>
+    <br>
+    <sup>Video comes from our ZJU-MoCap dataset with 19 calibrated and synchronized cameras.</sup>
+</div>
 
 Optionally, you can change the mode for other models:
 
 |Model|SMPL|MANO|
 |:----:|:----:|:----:|
-|Results|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-cxk.mp4" type="video/mp4"></video>|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-cxk.mp4" type="video/mp4"></video>|
+|Results|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-vposer.mp4" type="video/mp4"></video>|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-handl.mp4" type="video/mp4"></video>|
 
 
 ## Demo on monocular videos
