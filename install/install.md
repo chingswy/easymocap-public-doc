@@ -28,6 +28,14 @@ python3 -m pip install torch-1.4.0+cu100-cp37-cp37m-linux_x86_64.whl
 pip install https://download.pytorch.org/whl/cu100/torchvision-0.5.0%2Bcu100-cp37-cp37m-linux_x86_64.whl
 ```
 
+For cuda 10.1:
+```bash
+conda create -n easymocap python=3.7 -y
+conda activate easymocap
+python3 -m pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101
+```
+
+
 For cuda11.1+Python3.9+torch1.9.1 (newest version when writing this):
 ```bash
 conda create -n easymocap python=3.9 -y
