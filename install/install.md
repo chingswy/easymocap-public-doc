@@ -12,15 +12,23 @@ has_children: true
 {:toc}
 ---
 
-You can install EasyMocap to your current PyTorch environment.
+Briefly, to run the demo, you should at least install:
+1. [PyTorch](#install-pytorch)
+2. [pyrender for visualization](./install_vis3d.md)
+3. [human body prior](#install-human-body-prior)
+4. [EasyMocap](#install-easymocap)
 
-Create a conda environment and activate it.
+## Install PyTorch
+
+You can install EasyMocap to your current PyTorch environment. Most versions are supported.
+
+Simply create a conda environment and activate it.
 
 ```bash
-conda create -n easymocap python=${PYVERSION} -y
+conda create -n easymocap python=3.8 -y
 conda activate easymocap
+python3 -m pip install torch torchvision
 ```
-
 
 For cuda 10.0:
 ```bash
@@ -35,7 +43,6 @@ conda activate easymocap
 python3 -m pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101
 ```
 
-
 For cuda11.1+Python3.9+torch1.9.1 (newest version when writing this):
 ```bash
 conda create -n easymocap python=3.9 -y
@@ -45,6 +52,14 @@ wget -c https://download.pytorch.org/whl/cu111/torchvision-0.10.1%2Bcu111-cp39-c
 python3 -m pip install torch-1.9.1+cu111-cp39-cp39-linux_x86_64.whl
 python3 -m pip install ./torchvision-0.10.1+cu111-cp39-cp39-linux_x86_64.whl
 ```
+
+# Install human body prior
+
+```bash
+bash ./scripts/install/install_vposer.sh
+```
+
+# Install EasyMocap
 
 Then setup the EasyMocap
 
