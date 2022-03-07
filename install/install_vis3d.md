@@ -22,22 +22,33 @@ python3 -m pip install pyrender
 
 Install pyrender in a server:
 
+1. Install osmesa with sudo
+
 ```bash
-mkdir -p 3rdparty
-cd 3rdparty
 sudo apt update
 sudo wget https://github.com/mmatl/travis_debs/raw/master/xenial/mesa_18.3.3-0.deb
 sudo dpkg -i ./mesa_18.3.3-0.deb || true
 sudo apt install -f
-git clone https://github.com/mmatl/pyopengl.git
-python3 -m pip install ./pyopengl
+# add osmesa to environment variable
 echo "export PYOPENGL_PLATFORM=osmesa" >> ~/.zshrc
 export PYOPENGL_PLATFORM=osmesa
 ```
 
-## Install Open3D
+2. Install pyopengl
 
 ```bash
+mkdir -p 3rdparty
+cd 3rdparty
+git clone https://github.com/mmatl/pyopengl.git
+python3 -m pip install ./pyopengl
+```
+
+## Install Open3D
+
+We test the 3D visualization tools on Open3D==0.14.1.
+
+```bash
+python3 -m pip install -U pip # run this if pip can not find this version
 python3 -m pip install open3d==0.14.1
 ```
 
