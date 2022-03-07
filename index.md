@@ -1,3 +1,9 @@
+---
+layout: default
+title: EasyMocap
+nav_order: 1
+---
+
 <div align="center">
     <img src="images/logo.png" width="60%">
 </div>
