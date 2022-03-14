@@ -30,6 +30,15 @@ conda activate easymocap
 python3 -m pip install torch torchvision
 ```
 
+Check your cuda environment:
+```bash
+# export CUDA_VER=10.0
+# export CUDA_VER=10.1
+export CUDA_VER=11.4
+export PATH=/usr/local/cuda-$CUDA_VER/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-$CUDA_VER/lib64:$LD_LIBRARY_PATH
+```
+
 For cuda 10.0:
 ```bash
 python3 -m pip install torch-1.4.0+cu100-cp37-cp37m-linux_x86_64.whl
@@ -47,9 +56,9 @@ For cuda11.1+Python3.9+torch1.9.1 (newest version when writing this):
 ```bash
 conda create -n easymocap python=3.9 -y
 conda activate easymocap
-wget -c https://download.pytorch.org/whl/cu111/torch-1.9.1+cu111-cp39-cp39-linux_x86_64.whl
+wget -c https://download.pytorch.org/whl/cu111/torch-1.9.1%2Bcu111-cp39-cp39-linux_x86_64.whl
 wget -c https://download.pytorch.org/whl/cu111/torchvision-0.10.1%2Bcu111-cp39-cp39-linux_x86_64.whl
-python3 -m pip install torch-1.9.1+cu111-cp39-cp39-linux_x86_64.whl
+python3 -m pip install ./torch-1.9.1+cu111-cp39-cp39-linux_x86_64.whl
 python3 -m pip install ./torchvision-0.10.1+cu111-cp39-cp39-linux_x86_64.whl
 ```
 
@@ -64,5 +73,6 @@ bash ./scripts/install/install_vposer.sh
 Then setup the EasyMocap
 
 ```bash
+python3 -m pip install -r requirements.txt
 python3 setup.py develop
 ```
