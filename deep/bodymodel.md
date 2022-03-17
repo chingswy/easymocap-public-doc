@@ -36,3 +36,6 @@ This model is composed with MANO(left) and MANO(right). The poses parameter mean
 |full pose|[0, 3) | [3, 48) | [48, 51)| [51,96) |
 |----|:----:|:----:|:----:|:----:|
 |meaning|       rot L  |   poses L    |   rot R  |   poses R |
+
+## TODO
+- [ ] Support euler **angles**
