@@ -12,7 +12,20 @@ nav_order: 2
 {:toc}
 ---
 
-Copy dataset:
+### extract images from videos: `apps/preprocess/extract_image.py`
+
+```bash
+python3 apps/preprocess/extract_image.py ${data}
+```
+Extra flags:
+|flag|type||
+|----|----|----|
+|--image|str|output directory(default `images`)|
+|--ffmpeg|str|path to ffmpeg(default `ffmpeg`)|
+|--transpose|int|transpose for ffmepeg(default -1, for clockwise)|
+
+### copy and sample dataset:
+
 ```bash
 python3 scripts/preprocess/copy_dataset.py /path/to/input /path/to/output
 ```
