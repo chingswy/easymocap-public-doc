@@ -76,3 +76,19 @@ Then setup the EasyMocap
 python3 -m pip install -r requirements.txt
 python3 setup.py develop
 ```
+
+---
+
+# Other Modules
+
+After this, if you want to use the different modules, you should install their corresponding requirements:
+
+### NeuralBody
+
+
+```bash
+python3 -m pip install -r requirements_neuralbody.txt
+python3 -m pip install spconv-cu111
+bash ./scripts/install/install_vposer.sh
+bash ./scripts/install/install_pytorch3d.sh
+```
