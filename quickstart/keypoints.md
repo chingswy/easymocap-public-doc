@@ -21,8 +21,15 @@ nav_order: 5
 |face| ![face](https://raw.githubusercontent.com/CMU-Perceptual-Computing-Lab/openpose/master/.github/media/keypoints_face.png) |
 
 ## Mediapipe
+
 |name||
 |----|----|
 |body|![body](https://google.github.io/mediapipe/images/mobile/pose_tracking_full_body_landmarks.png) |
 |hand| ![hand](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png) | 
 |face| ![face](../images/dataset/mediapipe-facemesh.jpg) |
+
+## SMPL
+
+|name||
+|----|----|
+|SMPL|![body](../images/dataset/SMPL.png) |

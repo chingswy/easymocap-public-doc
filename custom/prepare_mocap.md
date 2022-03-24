@@ -1,11 +1,3 @@
-<!--
- * @Date: 2022-03-07 18:52:52
- * @Author: Qing Shuai
- * @Mail: s_q@zju.edu.cn
- * @LastEditors: Qing Shuai
- * @LastEditTime: 2022-03-24 15:51:01
- * @FilePath: /easymocap-public-doc/custom/prepare_mocap.md
--->
 ---
 layout: default
 title: Prepare Your MoCap Dataset

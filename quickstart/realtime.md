@@ -12,7 +12,7 @@ has_toc: true
 - TOC
 {:toc}
 ---
-
+****
 In this tutorial, we show how to build a real-time mocap system with EasyMocap.
 
 ## 0. Setup your cameras and calibrate them
@@ -34,16 +34,27 @@ python3 apps/calibration/calib_onestep.py ${data} --grid 0.03 --pattern 11,8
 ```
 
 <div align="center">
-    <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/desktop-calib.mp4" type="video/mp4">
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/desktop-calib.mp4" type="video/mp4">
     </video>
     <br>
     <sup>Calibration example.</sup>
 </div>
 
 {: .note }
-1. You should keep the chessboard static and visible in all views at the start.
-2. You should keep a static focal of all the camera.
+- You should keep the chessboard static and visible in all views at the start.
+- You should fix the focals of all cameras.
 
+After the calibration, check the camera parameters and visualize.
+
+```bash
+python3 apps/calibration/check_calib.py ${data} --mode cube --out ${data} --grid_step 0.1 --write --show
+```
+
+<div align="center">
+    <img src="../images/calib/desktop_calib_cube.jpg" width="80%">
+    <br>
+    <sup>Check the calibration results. The cube will be placed on the origin of the world coordinate.</sup>
+</div>
 
 ## 1. Check the keypoints detection tool
 
