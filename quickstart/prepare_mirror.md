@@ -43,7 +43,7 @@ python3 apps/annotation/annot_clip.py ${database}
 
 Main operations: `a/d` for previous/next frame, `w/s` for previous/next 100th frame. `j` for recoding the start of the clip; `k` for recording the end of the clip; `l` for add this clip to database. 
 
-|The arrow at the top indicates the current loaction|After press `j`, the red arrow show the start position|After press `k`, the right red arrow show the end position|
+|The arrow at the top indicates the current loaction|After press `j`, the red arrow shows the start position|After press `k`, the right red arrow shows the end position|
 |----|----|----|
 |![](../images/annot_clip_0.jpg)|![](../images/annot_clip_j.jpg)|![](../images/annot_clip_k.jpg)|
 |After press `l`, the clips will be red.|Repeat this operation, you can record multiple clips.|
@@ -57,9 +57,27 @@ data=/path/to/output
 python3 apps/annotation/annot_clip.py ${database} --copy --out ${data}
 ```
 
+After this step, you can reconstruct the results in one step or step-by-step.
+
+## One step reconstruction
+
+```bash
+xxx
+```
+
+The rendered results will be saved at `${data}/output-mirror/smplmesh/`.
+
+If some bug occurs, you should run this algorithm step-by-step and check the results of each step.
+
 ## Detect and track the human
 
 ```bash
 python3 apps/preprocess/extract_keypoints.py ${data} --mode yolo-hrnet
+python3 apps/preprocess/extract_track.py ${data}
 ```
 
+## Fitting SMPL
+
+```bash
+python3 apps/demo/mocap.py ${data} --mode mirror --mono
+```
