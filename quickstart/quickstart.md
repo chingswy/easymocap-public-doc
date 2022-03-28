@@ -77,6 +77,33 @@ Results can be found in `${data}/output-handr-kpts3d`.
     <sup>Data comes from <a href="https://mks0601.github.io/InterHand2.6M/">InterHand2.6M dataset</a>/test/Capture0/ROM04_RT_Occlusion.</sup>
 </div>
 
+## Demo for Neuralbody
+
+Prepare data:
+
+```bash
+python3 apps/postprocess/write_vertices.py ${data}/output-vposer-3d/smpl ${data}/output-vposer-3d/vertices --cfg_model ${data}/output-vposer-3d/cfg_model.yml --mode vertices
+```
+
+```bash
+data=/path/to/data
+# Train Neuralbody:
+python3 apps/neuralbody/demo.py ${data} --mode neuralbody --gpus 0,
+# Render Neuralbody:
+python3 apps/neuralbody/demo.py ${data} --mode neuralbody --gpus 0, --demo
+```
+
+You can replace the mode `neuralbody` to `aninerf`
+
+```bash
+data=/path/to/data
+# Train Animatable-NeRF:
+python3 apps/neuralbody/demo.py ${data} --mode aninerf --gpus 0,
+# Render Animatable-NeRF:
+python3 apps/neuralbody/demo.py ${data} --mode aninerf --gpus 0, --demo
+```
+
+
 ## :bug: Step-by-step debug
 
 If everything works well, you can skip this. 
