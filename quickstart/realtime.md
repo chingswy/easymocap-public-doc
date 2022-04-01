@@ -12,7 +12,7 @@ has_toc: true
 - TOC
 {:toc}
 ---
-****
+
 In this tutorial, we show how to build a real-time mocap system with EasyMocap.
 
 ## 0. Setup your cameras and calibrate them
@@ -58,6 +58,42 @@ python3 apps/calibration/check_calib.py ${data} --mode cube --out ${data} --grid
 
 ## 1. Check the keypoints detection tool
 
-## 2. Run the demo
+## 2. Run the demo for left hand
 
+### step 1. open the detector
 
+```bash
+python3 apps/camera/detect_server.py --cfg_cam config/camera/usb-logitech.yml --host 0.0.0.0:8888 --cfg_det config/camera/mediapipe-hand.yml --opt_cam args.params ${data}
+```
+
+### step 2. open the visualization
+
+```bash
+python3 apps/vis/vis_server.py --cfg config/vis3d/o3d_scene_manol.yml host 0.0.0.0 port 9999 block True
+```
+
+### step 3. run the main code
+
+```bash
+python3 apps/fit/triangulate1p.py --cfg_data config/recon/socket_mv1p.yml --cfg_exp config/recon/fit_manol.yml --vis3d localhost:9999 --det2d localhost:8888
+```
+
+## 2. Run the demo for body
+
+### step 1. open the detector
+
+```bash
+python3 apps/camera/detect_server.py --cfg_cam config/camera/usb-logitech.yml --host 0.0.0.0:8888 --cfg_det config/camera/mediapipe-body.yml --opt_cam args.params ${data}
+```
+
+### step 2. open the visualization
+
+```bash
+python3 apps/vis/vis_server.py --cfg config/vis3d/o3d_scene_smpl.yml host 0.0.0.0 port 9999 block True
+```
+
+### step 3. run the main code
+
+```bash
+python3 apps/fit/triangulate1p.py --cfg_data config/recon/socket_mv1p.yml --cfg_exp config/recon/fit_smpl.yml --vis3d localhost:9999 --det2d localhost:8888
+```

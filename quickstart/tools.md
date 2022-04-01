@@ -37,3 +37,15 @@ Extra flags:
 |--end|int|end frame(default None)|
 |--step|int|sample step(default 1)|
 |--scale|float|resize image with scale(default 1)|
+
+## Export vertices
+
+```bash
+python3 apps/postprocess/write_vertices.py ${data}/output-vposer-3d/smpl ${data}/output-vposer-3d/vertices --cfg_model ${data}/output-vposer-3d/cfg_model.yml --mode vertices
+```
+
+## Export triangle mesh
+
+```bash
+python3 apps/postprocess/write_vertices.py ${data}/output-vposer-3d/smpl ${data}/output-vposer-3d/mesh --cfg_model ${data}/output-vposer-3d/cfg_model.yml --mode mesh
+```

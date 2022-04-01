@@ -2,7 +2,7 @@
 layout: default
 title: Prepare Your Mirrored-Human Dataset
 parent: Quick Start
-nav_order: 3
+nav_order: 4
 ---
 
 # Prepare Your Mirrored-Human Dataset

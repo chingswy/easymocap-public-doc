@@ -33,7 +33,7 @@ python3 apps/camera/detect_server.py --cfg_cam config/camera/folder.yml --cfg_de
 
 ## TODO
 
-- [ ] multi-thread and queue for camera capture
-- [ ] multi-thread for mediapipe
+- [x] multi-thread and queue for camera capture
+- [x] multi-thread for mediapipe
 - [ ] calibration for dynamic cameras
 - [ ] add faster GPU-based detector and estimator

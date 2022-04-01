@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Calibration
-parent: Prepare Your MoCap Dataset
-grand_parent: Prepare
-nav_order: 1
+parent: Quick Start
+nav_order: 6
 ---
 
 # Calibration
