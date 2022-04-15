@@ -2,7 +2,7 @@
 layout: default
 title: Prepare Your Mirrored-Human Dataset
 parent: Quick Start
-nav_order: 4
+nav_order: 5
 ---
 
 # Prepare Your Mirrored-Human Dataset
@@ -49,6 +49,9 @@ Main operations: `a/d` for previous/next frame, `w/s` for previous/next 100th fr
 |After press `l`, the clips will be red.|Repeat this operation, you can record multiple clips.|
 |![](../images/annot_clip_l.jpg)|![](../images/annot_clip_two.jpg)||
 
+{ :.note }
+- Some tutorial has different speed of the same motion, just use the most slow clip as it can give less motion blur.
+
 
 After this annotation, copy the clips to `${data}`
 
@@ -75,6 +78,17 @@ If some bug occurs, you should run this algorithm step-by-step and check the res
 python3 apps/preprocess/extract_keypoints.py ${data} --mode yolo-hrnet
 python3 apps/preprocess/extract_track.py ${data}
 ```
+
+Process failure tracking:
+
+**case 1:** tracking failed because wrong clip, you should re-clip this sequence:
+
+```bash
+python3 scripts/preprocess/reclip.py ${data} --start 0 --end <right_end_frame> --delete
+```
+
+This script will auto create a new folder and copy the images and annotations to the new folder. `--delete` flag will help you to delete the origina folder.
+
 
 ## Fitting SMPL
 

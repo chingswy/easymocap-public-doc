@@ -22,5 +22,7 @@ git submodule update --init --recursive --remote
 
 ## Install Yolov4+HRNet
 
+Download model weight of HRNet
+
 ## Install MediaPipe
 

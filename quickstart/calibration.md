@@ -2,7 +2,7 @@
 layout: default
 title: Calibration
 parent: Quick Start
-nav_order: 6
+nav_order: 101
 ---
 
 # Calibration

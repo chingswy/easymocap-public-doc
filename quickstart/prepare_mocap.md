@@ -21,6 +21,9 @@ See [prepare keypoints](./keypoints.md#extract-keypoints)
 
 ## Public Dataset
 
+### aist
+
+
 ### AMA
 
 ```bash

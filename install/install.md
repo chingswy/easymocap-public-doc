@@ -73,6 +73,7 @@ bash ./scripts/install/install_vposer.sh
 Then setup the EasyMocap
 
 ```bash
+git clone https://github.com/zju3dv/EasyMocap.git
 python3 -m pip install -r requirements.txt
 python3 setup.py develop
 ```

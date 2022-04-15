@@ -2,8 +2,7 @@
 layout: default
 title: Useful tools
 parent: Quick Start
-nav_order: 2
-has_toc: true
+nav_order: 102
 ---
 
 # Useful tools

@@ -2,7 +2,7 @@
 layout: default
 title: Keypoints Definition
 parent: Quick Start
-nav_order: 5
+nav_order: 100
 ---
 
 # Keypoints Definition
@@ -18,7 +18,7 @@ In most common usage, we use `body25 format` of OpenPose[^openpose] as our stand
 
 ### YOLOv4+HRNet
 
-Download the model from their official websites:
+Download the model from their official websites: [HRNet](https://drive.google.com/drive/folders/1hOTihvbyIxsm5ygDpbUuJ7O_tzv4oXjC)
 
 ```bash
 data/models
@@ -34,7 +34,8 @@ python3 apps/preprocess/extract_keypoints.py ${data} --mode yolo-hrnet
 
 ### OpenPose
 
-OpenPose[^openpose] can detect the human body, hand, facial and foot keypoints, you should install this follow their tutorial.
+OpenPose[^openpose] can detect the human body, hand, facial and foot keypoints, you should install this follow their [tutorial](https://github.com/CMU-Perceptual-Computing-Lab/openpose).
+
 
 ```bash
 openpose=<path/to/openpose/installation>
