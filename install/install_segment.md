@@ -51,7 +51,7 @@ python3 extract_multi.py ${data} --ckpt_dir /path/to/models
 
 Results can be found in `data/`
 
-{ : .warning }
+{ :.warning }
 This code will generate some very big(>100G) outputs. If you don't have enough space in `data/`, please add ` --tmp /path/to/tmp`
 
 ---
