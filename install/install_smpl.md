@@ -32,7 +32,7 @@ data/bodymodels
         └── smpl_webuser
 ```
 
-To check the model, please [install](install_vis3d.md) and use our 3D visualization tool:
+To check the model, please [install](install_vis3d.md#install-open3d) and use our 3D visualization tool:
 
 ```bash
 python3 apps/vis3d/vis_smpl.py --cfg config/model/smpl.yml

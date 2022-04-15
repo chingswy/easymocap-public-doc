@@ -15,6 +15,8 @@ nav_order: 2
 
 ## Install Pyrender
 
+Pyrender is used to visualized the mesh during fitting.
+
 Install pyrender in a computer with a screen:
 ```bash
 python3 -m pip install pyrender
@@ -29,9 +31,6 @@ sudo apt update
 sudo wget https://github.com/mmatl/travis_debs/raw/master/xenial/mesa_18.3.3-0.deb
 sudo dpkg -i ./mesa_18.3.3-0.deb || true
 sudo apt install -f
-# add osmesa to environment variable
-echo "export PYOPENGL_PLATFORM=osmesa" >> ~/.zshrc
-export PYOPENGL_PLATFORM=osmesa
 ```
 
 2. Install pyopengl
@@ -41,9 +40,17 @@ mkdir -p 3rdparty
 cd 3rdparty
 git clone https://github.com/mmatl/pyopengl.git
 python3 -m pip install ./pyopengl
+# add osmesa to environment variable
+echo "export PYOPENGL_PLATFORM=osmesa" >> ~/.zshrc
+export PYOPENGL_PLATFORM=osmesa
 ```
 
+{ : .warning }
+You must run `export PYOPENGL_PLATFORM=osmesa` once before you run any code.
+
 ## Install Open3D
+
+Open3D is used to perform realtime visualization and SMPL visualization with GUI. No need for this if you just run the fitting code.
 
 We test the 3D visualization tools on Open3D==0.14.1.
 

@@ -9,7 +9,7 @@ nav_order: 3
 
 ## SCHP: Self Correction for Human Parsing
 
-SCHP is an out-of-box human parsing representation extractor.
+SCHP[^schp] is an out-of-box human parsing representation extractor.
 
 Given an environment of EasyMocap, we can install this code as following:
 
@@ -51,5 +51,9 @@ python3 extract_multi.py ${data} --ckpt_dir /path/to/models
 
 Results can be found in `data/`
 
-{ :.warning }
+{ : .warning }
 This code will generate some very big(>100G) outputs. If you don't have enough space in `data/`, please add ` --tmp /path/to/tmp`
+
+---
+
+[^schp]: Li, Peike, et al. "Self-correction for human parsing." IEEE Transactions on Pattern Analysis and Machine Intelligence (2020).
