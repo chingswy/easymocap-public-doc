@@ -45,8 +45,15 @@ python3 scripts/preprocess/copy_dataset.py ${data} ${data}/../150821_dance1_160_
 You can do this with our clip tool:
 
 ```bash
+# first annotate the clips mannually
 python3 apps/annotation/annot_clip.py ${data} --mv
+# then copy the clips to different folders
 python3 apps/annotation/annot_clip.py ${data} --mv --copy
+```
+
+Convert the keypoints:
+```bash
+python3 scripts/dataset/pre_panoptic.py ${data} --keypoints
 ```
 
 ### aist
