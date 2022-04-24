@@ -17,6 +17,9 @@ nav_order: 2
 
 Pyrender is used to visualized the mesh during fitting.
 
+{ :.note }
+If you meet some errors like `pyglet.canvas.xlib.NoSuchDisplayException: Cannot connect to "None"`, you must run this code on a server. You should follow this tutorial.
+
 Install pyrender in a computer with a screen:
 ```bash
 python3 -m pip install pyrender
@@ -39,13 +42,14 @@ sudo apt install -f
 mkdir -p 3rdparty
 cd 3rdparty
 git clone https://github.com/mmatl/pyopengl.git
+python3 -m pip uninstall pyopengl
 python3 -m pip install ./pyopengl
 # add osmesa to environment variable
 echo "export PYOPENGL_PLATFORM=osmesa" >> ~/.zshrc
 export PYOPENGL_PLATFORM=osmesa
 ```
 
-{ : .warning }
+{ :.warning }
 You must run `export PYOPENGL_PLATFORM=osmesa` once before you run any code.
 
 ## Install Open3D
