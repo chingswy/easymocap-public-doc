@@ -50,7 +50,7 @@ export PYOPENGL_PLATFORM=osmesa
 ```
 
 {: .warning }
-You must run `export PYOPENGL_PLATFORM=osmesa` once before you run any code if you run this code on a server.
+You must run `export PYOPENGL_PLATFORM=osmesa` once before you run any code on a server.
 
 ## Install Open3D
 
