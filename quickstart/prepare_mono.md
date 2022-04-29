@@ -5,7 +5,7 @@ parent: Quick Start
 nav_order: 4
 ---
 
-# Prepare Your MoCap Dataset
+# Prepare Your Monocular Dataset
 {: .no_toc }
 
 1. TOC

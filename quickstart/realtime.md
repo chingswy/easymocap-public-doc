@@ -4,6 +4,7 @@ title: Realtime Demo
 parent: Quick Start
 nav_order: 1
 has_toc: true
+nav_exclude: true
 ---
 
 # Realtime Demo

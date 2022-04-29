@@ -49,7 +49,7 @@ Main operations: `a/d` for previous/next frame, `w/s` for previous/next 100th fr
 |After press `l`, the clips will be red.|Repeat this operation, you can record multiple clips.|
 |![](../images/annot_clip_l.jpg)|![](../images/annot_clip_two.jpg)||
 
-{ :.note }
+{: .note }
 - Some tutorial has different speed of the same motion, just use the most slow clip as it can give less motion blur.
 
 

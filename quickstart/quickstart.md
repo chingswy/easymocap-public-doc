@@ -14,14 +14,14 @@ has_children: true
 
 ## Demo on multiple calibrated cameras
 
-Download our demo dataset [here]() and extract the dataset. If you want to run this code on your own dataset, see [Prepare Your MoCap Dataset](./prepare_mocap.md) for more details.
+Download our demo dataset [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/ESnS1ix5LtxMqV_MWXQJMM4BoxRt5NQ5RmkYo4d5iZueAQ?e=shtmUJ) and extract the dataset. If you want to run this code on your own dataset, see [Prepare Your MoCap Dataset](./prepare_mocap.md) for more details.
 
 ```bash
 data=/path/to/dataset
-python3 apps/demo/mocap.py ${data} --mode vposerh-3d
+python3 apps/demo/mocap.py ${data} --mode smplh-3d
 ```
 
-The visualization results can be found in `${data}/output-vposerh-3d/smplmesh.mp4`
+The visualization results can be found in `${data}/output-smplh-3d/smplmesh.mp4`
 
 <div align="center">
     <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-smplh.mp4" type="video/mp4">
@@ -34,6 +34,7 @@ Optionally, you can change the mode for other models:
 
 |Model|SMPL|MANO|
 |:----:|:----:|:----:|
+|Mode|vposer-3d|manol|
 |Results|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-vposer.mp4" type="video/mp4"></video>|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-handl.mp4" type="video/mp4"></video>|
 
 
@@ -43,7 +44,7 @@ Download demo dataset [here](../datasets/1v1p-test.zip) and extract the dataset.
 
 ```bash
 data=/path/to/dataset
-python3 apps/demo/mocap.py ${data} --mode mono-smpl --mono
+python3 apps/demo/mocap.py ${data} --mode smpl-robust --mono
 ```
 
 <div align="center">
