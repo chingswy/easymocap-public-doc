@@ -40,7 +40,7 @@ Optionally, you can change the mode for other models:
 
 ## Demo on monocular videos
 
-Download demo dataset [here](../datasets/1v1p-test.zip) and extract the dataset.
+Download demo dataset [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/ET-rr5vcXQ9DrORrmmRlOpgBttcEtdmL-tZAx5J124_jiw?e=tC96Mo) and extract the dataset.
 
 ```bash
 data=/path/to/dataset
@@ -55,6 +55,29 @@ python3 apps/demo/mocap.py ${data} --mode smpl-robust --mono
     <br>
     <sup>Videos come from <a href="https://www.youtube.com/watch?v=GLu5YwiAtC4">Youtube</a> and <a href="https://www.bilibili.com/video/BV12X4y1c7AD?p=1">Bilibili</a>.</sup>
 </div>
+
+
+## Demo on static mesh
+
+Download example mesh [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/Ea1qJYUnhcJLiQEZIHd6atYBKeYKVWNEHAw23dpAGNKQwg?e=taa4KU) and extract the dataset.
+
+```bash
+# Render the example mesh `xuzhen`
+data=/path/to/data
+python3 apps/vis/render_mesh.py ${data}/meshes/xuzhen --start -110 --up x --num 180
+# Extract the keypoints if you use your own renderer datasets
+
+```
+
+After this, run our code to recover the pose parameters.
+
+```bash
+python3 apps/demo/mocap.py ${data} --mode scan --mono --render_side
+```
+
+The results in `${data}/output-mono-scan/smplmesh/xuzhen.mp4`:
+
+
 
 ## Demo on monocular Mirrored-Human datasets
 
