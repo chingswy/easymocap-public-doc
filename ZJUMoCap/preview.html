@@ -3,15 +3,45 @@
  * @Author: Qing Shuai
  * @Mail: s_q@zju.edu.cn
  * @LastEditors: Qing Shuai
- * @LastEditTime: 2022-05-10 20:38:29
+ * @LastEditTime: 2022-05-10 20:48:48
  * @FilePath: /easymocap-public-doc/ZJUMoCap/preview.html
 -->
+
+<div class="row">
+    <div class="column">
+        <p class="button" onclick="previousPage('lightstage')"
+            style="margin-top:10px" role="button">
+            Prev
+        </p>
+    </div>
+    <div class="column">
+        <p id="page-number-lightstage" class="button" style="margin-top:10px"
+            role="button">1</p>
+    </div>
+    <div class="column">
+        <p class="button" onclick="nextPage('lightstage')" style="margin-top:10px"
+            role="button">Next</p>
+    </div>
+</div>
+
 <table cellspacing="0">
     <thead>
         <td>sequence</td>
         <td>preview</td>
     </thead>
     <tbody id="tab-mirror">
-                
+
     </tbody>
 </table>
+
+<script>
+    function previousPage(dataset) {
+        var page = document.getElementById("page-number-" + dataset);
+        page.innerText = parseInt(page.innerText) - 1;
+    }
+
+    function nextPage(dataset) {
+        var page = document.getElementById("page-number-" + dataset);
+        page.innerText = parseInt(page.innerText) + 1;
+    }    
+</script>
