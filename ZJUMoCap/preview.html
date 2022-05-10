@@ -3,13 +3,16 @@
  * @Author: Qing Shuai
  * @Mail: s_q@zju.edu.cn
  * @LastEditors: Qing Shuai
- * @LastEditTime: 2022-05-10 22:01:58
+ * @LastEditTime: 2022-05-10 22:06:13
  * @FilePath: /easymocap-public-doc/ZJUMoCap/preview.html
 -->
 
-<button type="button" name="button-prev" class="btn" onclick="previousPage('{{ include.name }}')">Prev</button>
-<button id="page-number-{{ include.name }}" type="button" name="button-prev" class="btn">1</button>
-<button type="button" name="button-next" class="btn" onclick="nextPage('{{ include.name }}')">Next</button>
+<div align="center">
+    <button type="button" class="btn">{{ include.name }}</button>
+    <button type="button" name="button-prev" class="btn" onclick="previousPage('{{ include.name }}')">Prev</button>
+    <button id="page-number-{{ include.name }}" type="button" name="button-prev" class="btn">1</button>
+    <button type="button" name="button-next" class="btn" onclick="nextPage('{{ include.name }}')">Next</button>
+</div>
 
 <table cellspacing="0">
     <thead>

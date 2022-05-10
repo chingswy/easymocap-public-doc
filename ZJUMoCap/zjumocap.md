@@ -13,5 +13,5 @@ nav_order: 1
 
 ## Release Notes
 
-**Before 2022.05.10**: We release all the views of the compressed videos of **part 1**.
-**2022.05.10:** Release **part 1**. We remove the unsynchronized cameras and re-calibrate the cameras using colmap.
+- **Before 2022.05.10**: We release all the views of the compressed videos of **part 1**.
+- **2022.05.10:** Release **part 1**. We remove the unsynchronized cameras and re-calibrate the cameras using colmap.
