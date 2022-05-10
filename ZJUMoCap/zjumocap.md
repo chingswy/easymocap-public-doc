@@ -6,14 +6,8 @@ nav_order: 1
 ---
 
 # ZJUMoCap
-{: .no_toc }
-
-1. TOC
-{:toc}
----
-
-
 ## Part 1
+
 {% include_relative preview.html name="part1" %}
 
 
