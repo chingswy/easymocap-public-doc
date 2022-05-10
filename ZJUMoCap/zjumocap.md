@@ -6,8 +6,6 @@ nav_order: 1
 ---
 
 # ZJUMoCap
-## Part 1
-
 {% include_relative preview.html name="part1" %}
 
 
