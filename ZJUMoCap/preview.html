@@ -3,24 +3,24 @@
  * @Author: Qing Shuai
  * @Mail: s_q@zju.edu.cn
  * @LastEditors: Qing Shuai
- * @LastEditTime: 2022-05-10 21:33:21
+ * @LastEditTime: 2022-05-10 21:44:55
  * @FilePath: /easymocap-public-doc/ZJUMoCap/preview.html
 -->
 
-<button type="button" name="button-prev" class="btn" onclick="previousPage('lightstage')">Prev</button>
-<button id="page-number-lightstage" type="button" name="button-prev" class="btn">1</button>
-<button type="button" name="button-next" class="btn" onclick="nextPage('lightstage')">Next</button>
+<button type="button" name="button-prev" class="btn" onclick="previousPage('{{ include.name }}')">Prev</button>
+<button id="page-number-{{ include.name }}" type="button" name="button-prev" class="btn">1</button>
+<button type="button" name="button-next" class="btn" onclick="nextPage('{{ include.name }}')">Next</button>
 
 <table cellspacing="0">
     <thead>
     </thead>
-    <tbody id="tab-lightstage">
+    <tbody id="tab-{{ include.name }}">
 
     </tbody>
 </table>
 
 <script>
-     var infos = {
+    var infos = {
         "v1": {
             "root": "../datasets/v1-preview",
             "start": 0,
@@ -86,8 +86,5 @@
         }
     }
 
-    for (var dataset in infos) {
-        var info = infos[dataset];
-        add_dataset(dataset, info);
-    }
+    add_dataset("{{ include.name }}", infos["{{ include.name }}"]);
 </script>

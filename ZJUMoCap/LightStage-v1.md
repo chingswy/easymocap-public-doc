@@ -16,4 +16,4 @@ nav_order: 1
 
 ZJUMoCap-v1
 
-{% include_relative preview.html %}
+{% include_relative preview.html name="v1" %}
