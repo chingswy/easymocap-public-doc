@@ -3,47 +3,91 @@
  * @Author: Qing Shuai
  * @Mail: s_q@zju.edu.cn
  * @LastEditors: Qing Shuai
- * @LastEditTime: 2022-05-10 20:55:47
+ * @LastEditTime: 2022-05-10 21:33:21
  * @FilePath: /easymocap-public-doc/ZJUMoCap/preview.html
 -->
 
-<div class="row">
-    <div class="column">
-        <p class="button" onclick="previousPage('lightstage')" role="button">
-            Prev
-        </p>
-    </div>
-    <div class="column">
-        <p id="page-number-lightstage" class="button" role="button">1</p>
-    </div>
-    <div class="column">
-        <p class="button" onclick="nextPage('lightstage')" role="button">Next</p>
-    </div>
-</div>
-
-<div class="row">
-    <button type="button" name="button-prev" class="btn" onclick="previousPage('lightstage')">Prev</button>
-    <button type="button" name="button-next" class="btn" onclick="nextPage('lightstage')">Prev</button>
-</div>
+<button type="button" name="button-prev" class="btn" onclick="previousPage('lightstage')">Prev</button>
+<button id="page-number-lightstage" type="button" name="button-prev" class="btn">1</button>
+<button type="button" name="button-next" class="btn" onclick="nextPage('lightstage')">Next</button>
 
 <table cellspacing="0">
     <thead>
-        <td>sequence</td>
-        <td>preview</td>
     </thead>
-    <tbody id="tab-mirror">
+    <tbody id="tab-lightstage">
 
     </tbody>
 </table>
 
 <script>
-    function previousPage(dataset) {
+     var infos = {
+        "v1": {
+            "root": "../datasets/v1-preview",
+            "start": 0,
+            "seqs": ['365.mp4', '366.mp4', '367.mp4', '368.mp4', '369.mp4', '370.mp4', '371.mp4', '377.mp4', '378.mp4', '381.mp4', '382.mp4', '383.mp4', '384.mp4', '385.mp4', '386.mp4', '387.mp4', '388.mp4', '390.mp4', '392.mp4', '393.mp4', '394.mp4', '395.mp4'],
+            "rows": 2,
+            "cols": 2,
+            "width": 500,
+        }
+    };
+
+    function reloadPage(dataset) {
+        var inputs = document.getElementsByClassName("video-output-" + dataset);
+        for (var r = 0; r < infos[dataset]["rows"]; r++) {
+            for (var c = 0; c < infos[dataset]["cols"]; c++) {
+                var i = r * infos[dataset]["cols"] + c + infos[dataset]["start"];
+                var td = inputs[r * infos[dataset]["cols"] + c];
+                if (i >= infos[dataset]["seqs"].length) {
+                    td.src = "";
+                    continue;
+                } else {
+                    // td.parentNode.parentNode.href = "https://www.youtube.com/watch?v=" + get_seqname(seqs[i]);
+                    td.src = infos[dataset]["root"] + infos[dataset]["seqs"][i];
+                }
+                td.parentNode.load();
+                td.parentNode.play();
+            }
+        }
         var page = document.getElementById("page-number-" + dataset);
-        page.innerText = parseInt(page.innerText) - 1;
+        page.innerText = 1 + infos[dataset]["start"] / (infos[dataset]["cols"] * infos[dataset]["rows"]);
+    }
+        
+    function previousPage(dataset) {
+        if (infos[dataset]['start'] == 0) return;
+        var videos_page = infos[dataset]['rows'] * infos[dataset]['cols'];
+        infos[dataset]['start'] = Math.max(infos[dataset]['start'] - videos_page, 0);
+        reloadPage(dataset);
     }
 
     function nextPage(dataset) {
-        var page = document.getElementById("page-number-" + dataset);
-        page.innerText = parseInt(page.innerText) + 1;
-    }    
+        var videos_page = infos[dataset]['rows'] * infos[dataset]['cols'];
+        var start = infos[dataset]['start'];
+        if (start + videos_page >= infos[dataset]['seqs'].length) return;
+        start = Math.min(start + videos_page, infos[dataset]['seqs'].length);
+        infos[dataset]['start'] = start;
+        reloadPage(dataset);
+    }
+
+    function add_dataset(dataset, info) {
+        var table = document.getElementById("tab-" + dataset);
+        for (var r = 0; r < info["rows"]; r++) {
+            var tr = document.createElement('tr');
+            table.appendChild(tr);
+            for (var c = 0; c < info["cols"]; c++) {
+                var i = r * info["cols"] + c + info["start"];
+                var td = document.createElement('td');
+                td.width = info["width"];
+                var link = document.createElement('a');
+                var filename = info["root"] + info["seqs"][i];
+                link.innerHTML = '<video width="' + info["width"] + '" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="' + filename + '" type="video/mp4"' + ' class="video-output-' + dataset + '"' + '></video>';
+                td.appendChild(link);
+                tr.appendChild(td);
+            }
+        }
+    }
+
+    for (var dataset in infos) {
+        var info = infos[dataset];
+        add_dataset(dataset, info);
+    }
 </script>

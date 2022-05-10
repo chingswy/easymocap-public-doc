@@ -1,11 +1,11 @@
 ---
 layout: default
-title: ZJUMoCap
-nav_order: 5
-has_children: true
+title: ZJUMoCap-v1
+parent: ZJUMoCap
+nav_order: 1
 ---
 
-# ZJUMoCap
+# ZJUMoCap-v1
 {: .no_toc }
 
 1. TOC
