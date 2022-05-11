@@ -3,7 +3,7 @@
  * @Author: Qing Shuai
  * @Mail: s_q@zju.edu.cn
  * @LastEditors: Qing Shuai
- * @LastEditTime: 2022-05-11 14:47:42
+ * @LastEditTime: 2022-05-11 22:45:16
  * @FilePath: /easymocap-public-doc/ZJUMoCap/preview.html
 -->
 
@@ -25,18 +25,18 @@
 
 <script>
     var infos = {
-        "part1": {
-            "root": "../datasets/v1-preview/",
+        "Part1": {
+            "root": "../datasets/p1-preview/",
             "start": 0,
             "seqs": ['365.mp4', '366.mp4', '367.mp4', '368.mp4', '369.mp4', '370.mp4', '371.mp4', '377.mp4', '378.mp4', '381.mp4', '382.mp4', '383.mp4', '384.mp4', '385.mp4', '386.mp4', '387.mp4', '388.mp4', '390.mp4', '392.mp4', '393.mp4', '394.mp4', '395.mp4'],
             "rows": 1,
             "cols": 1,
             "width": 300,
         },
-        "part2": {
-            "root": "../datasets/v1-preview/",
+        "Part2": {
+            "root": "../datasets/p2-preview/",
             "start": 0,
-            "seqs": ['365.mp4', '366.mp4', '367.mp4', '368.mp4', '369.mp4', '370.mp4', '371.mp4', '377.mp4', '378.mp4', '381.mp4', '382.mp4', '383.mp4', '384.mp4', '385.mp4', '386.mp4', '387.mp4', '388.mp4', '390.mp4', '392.mp4', '393.mp4', '394.mp4', '395.mp4'],
+            "seqs": ['470.mp4', '473.mp4', '478.mp4', '481.mp4', '482.mp4', '483.mp4', '490.mp4', '497.mp4', '499.mp4', '501.mp4'],
             "rows": 1,
             "cols": 1,
             "width": 300,
@@ -61,9 +61,10 @@
             }
         }
         var page = document.getElementById("page-number-" + dataset);
-        page.innerText = 1 + infos[dataset]["start"] / (infos[dataset]["cols"] * infos[dataset]["rows"]);
+        page.innerText = infos[dataset]["seqs"][infos[dataset]["start"]];
+        // page.innerText = 1 + infos[dataset]["start"] / (infos[dataset]["cols"] * infos[dataset]["rows"]);
     }
-        
+
     function previousPage(dataset) {
         if (infos[dataset]['start'] == 0) return;
         var videos_page = infos[dataset]['rows'] * infos[dataset]['cols'];
@@ -97,6 +98,8 @@
                 tr.appendChild(td);
             }
         }
+        var page = document.getElementById("page-number-" + dataset);
+        page.innerText = infos[dataset]["seqs"][0];
     }
 
     add_dataset("{{ include.name }}", infos["{{ include.name }}"]);
