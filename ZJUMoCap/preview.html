@@ -3,14 +3,15 @@
  * @Author: Qing Shuai
  * @Mail: s_q@zju.edu.cn
  * @LastEditors: Qing Shuai
- * @LastEditTime: 2022-05-10 22:06:13
+ * @LastEditTime: 2022-05-11 14:39:06
  * @FilePath: /easymocap-public-doc/ZJUMoCap/preview.html
 -->
 
+<button type="button" class="btn btn-blue">{{ include.name }}</button>
+
 <div align="center">
-    <button type="button" class="btn">{{ include.name }}</button>
     <button type="button" name="button-prev" class="btn" onclick="previousPage('{{ include.name }}')">Prev</button>
-    <button id="page-number-{{ include.name }}" type="button" name="button-prev" class="btn">1</button>
+    <button id="page-number-{{ include.name }}" type="button" name="button-prev" class="btn">1/22</button>
     <button type="button" name="button-next" class="btn" onclick="nextPage('{{ include.name }}')">Next</button>
 </div>
 
@@ -28,12 +29,12 @@
             "root": "../datasets/v1-preview/",
             "start": 0,
             "seqs": ['365.mp4', '366.mp4', '367.mp4', '368.mp4', '369.mp4', '370.mp4', '371.mp4', '377.mp4', '378.mp4', '381.mp4', '382.mp4', '383.mp4', '384.mp4', '385.mp4', '386.mp4', '387.mp4', '388.mp4', '390.mp4', '392.mp4', '393.mp4', '394.mp4', '395.mp4'],
-            "rows": 2,
-            "cols": 2,
+            "rows": 1,
+            "cols": 1,
             "width": 300,
         }
     };
-
+    
     function reloadPage(dataset) {
         var inputs = document.getElementsByClassName("video-output-" + dataset);
         for (var r = 0; r < infos[dataset]["rows"]; r++) {
