@@ -16,7 +16,7 @@ nav_order: 1
     <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-6.mp4" type="video/mp4">
     </video>
     <br>
-    <sup>Video comes from 8 GoPro cameras.</sup>
+    <sup>Given sparse multi-view videos of human performers, our approach is able to generate high-fidelity novel views and accurate instance masks even for crowded scenes. This scene is captured by 8 GoPro cameras.</sup>
 </div>
 
 ## More Results
