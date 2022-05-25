@@ -10,7 +10,7 @@ nav_order: 1
 {: .no_toc }
 
 [arXiv(coming soon)](http://example.com/){: .btn .btn-blue }
-[Code(coming soon)](http://example.com/){: .btn .btn-blue }
+[Code(coming soon)](http://example.com/){: .btn .btn-purple }
 
 ## More Results
 

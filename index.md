@@ -26,7 +26,7 @@ nav_order: 1
 This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^pavlakos2019]/MANO[^romero2017] model to capture body+hand+face poses from multiple views.
 
 <div align="center">
-    <img src="doc/feng/mv1pmf-smplx.gif" width="80%">
+    <img src="https://github.com/zju3dv/EasyMocap/raw/master/doc/feng/mv1pmf-smplx.gif" width="80%">
     <br>
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/mv1p-dance-smpl.gif" width="80%">
     <br>
@@ -34,7 +34,7 @@ This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^
 </div>
 
 <div align="center">
-    <img src="doc/feng/mano.gif" width="80%">
+    <img src="https://github.com/zju3dv/EasyMocap/raw/master/doc/feng/mano.gif" width="80%">
     <br>
     <sup>Captured with 8 cameras.</sup>
 </div>
@@ -65,7 +65,7 @@ This part is the basic code for fitting SMPL[^loper2015] with 2D keypoints estim
 [![report](https://img.shields.io/badge/ECCV20-imocap-red)](https://arxiv.org/pdf/2008.07931.pdf) [![quickstart](https://img.shields.io/badge/quickstart-green)](./doc/todo.md)
 
 <div align="center">
-    <img src="doc/imocap/imocap.gif" width="80%"><br/>
+    <img src="https://github.com/zju3dv/EasyMocap/raw/master/doc/imocap/imocap.gif" width="80%"><br/>
     <sup>Internet videos of Roger Federer's serving</sup>
 </div>
 
@@ -74,7 +74,7 @@ This part is the basic code for fitting SMPL[^loper2015] with 2D keypoints estim
 [![report](https://img.shields.io/badge/CVPR19-mvpose-red)](https://arxiv.org/pdf/1901.04111.pdf) [![quickstart](https://img.shields.io/badge/quickstart-green)](./doc/mvmp.md)
 
 <div align="center">
-    <img src="doc/assets/mvmp1f.gif" width="80%"><br/>
+    <img src="https://github.com/zju3dv/EasyMocap/raw/master/doc/assets/mvmp1f.gif" width="80%"><br/>
     <sup>Captured with 8 consumer cameras</sup>
 </div>
 
@@ -99,7 +99,7 @@ With our proposed method, we release two large dataset of human motion: LightSta
 If you would like to download the ZJU-Mocap dataset, please sign the [agreement](https://zjueducn-my.sharepoint.com/:b:/g/personal/pengsida_zju_edu_cn/EUPiybrcFeNEhdQROx4-LNEBm4lzLxDwkk1SBcNWFgeplA?e=BGDiQh), and email it to Qing Shuai (s_q@zju.edu.cn) and cc Xiaowei Zhou (xwzhou@zju.edu.cn) to request the download link.
 
 <div align="center">
-    <img src="doc/assets/ZJU-MoCap-lightstage.jpg" width="80%"><br/>
+    <img src="https://github.com/zju3dv/EasyMocap/raw/master/doc/assets/ZJU-MoCap-lightstage.jpg" width="80%"><br/>
     <sup>LightStage: captured with LightStage system</sup>
 </div>
 
