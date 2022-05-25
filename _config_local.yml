@@ -1,0 +1,101 @@
+# Configuration for GitHub Pages
+# Local Setting
+baseurl: ""
+url: ""
+
+# Theme
+theme: "just-the-docs"
+
+markdown: kramdown
+highlighter: rouge
+# Set a path/url to a logo that will be displayed instead of the title
+logo: "images/logo_horizontal_color.png"
+
+plugins:
+  # - jekyll-spaceship # 暂时不支持这个插件
+  - jemoji
+
+jekyll-spaceship:
+  # default enabled processors
+  processors:
+    - table-processor
+    - mermaid-processor
+    - media-processor
+  mermaid-processor:
+    mode: default  # mode value 'pre-fetch' for fetching image at building stage
+    css:
+      class: mermaid
+    syntax:
+      code: 'mermaid!'
+      custom: ['@startmermaid', '@endmermaid']
+    config:
+      theme: default
+    src: https://mermaid.ink/svg/
+  media-processor:
+    default:
+      id: 'media-{id}'
+      class: 'media'
+      width: '100%'
+      height: 350
+      frameborder: 0
+      style: 'max-width: 600px; outline: none;'
+      allow: 'encrypted-media; picture-in-picture'
+
+# Enable or disable the site search
+search_enabled: true
+search:
+  # Split pages into sections that can be searched individually
+  # Supports 1 - 6, default: 2
+  heading_level: 2
+  # Maximum amount of previews per search result
+  # Default: 3
+  previews: 3
+  # Maximum amount of words to display before a matched word in the preview
+  # Default: 5
+  preview_words_before: 5
+  # Maximum amount of words to display after a matched word in the preview
+  # Default: 10
+  preview_words_after: 10
+  # Set the search token separator
+  # Default: /[\s\-/]+/
+  # Example: enable support for hyphenated search words
+  tokenizer_separator: /[\s/]+/
+  # Display the relative url in search results
+  # Supports true (default) or false
+  rel_url: true
+  # Enable or disable the search button that appears in the bottom right corner of every page
+  # Supports true or false (default)
+  button: false
+
+# Set the search token separator for hyphenated-word search:
+search_tokenizer_separator: /[\s/]+/
+
+# Enable or disable heading anchors
+heading_anchors: true
+
+# Aux links for the upper right navigation
+aux_links:
+  "EasyMocap on GitHub":
+    - "//github.com/zju3dv/EasyMocap"
+
+# Footer content appears at the bottom of every page's main content
+# footer_content: "&copy; 2020 GOOGLE LLC | <a href=\"https://policies.google.com/privacy\">PRIVACY POLICY</a> | <a href=\"https://policies.google.com/terms\">TERMS OF SERVICE</a>"
+# Footer metadata
+show_last_edit_time: true
+last_edit_time_format: "%Y-%m-%d %H:%M"
+show_gh_edit_link: true
+edit_link_text: "Edit this page on GitHub"
+
+# Color scheme currently only supports "dark", "light"/nil (default), or a custom scheme that you define
+color_scheme: mediapipe
+
+# Google Analytics Tracking (optional)
+# ga_tracking: UA-140696581-2
+
+# copy from here: https://github.com/pdmosses/test-nav/blob/master/_config.yml
+# https://github.com/pdmosses/test-nav/blob/master/docs/Mathjax/EXAMPLE.md
+compress_html:
+  blanklines: true
+mathjax:
+  source: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML
+  config: 'MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } } })'

@@ -36,3 +36,20 @@ path = 'xxx'
 cameras = read_cameras(path)
 write_camera(outdir, cameras)
 ```
+
+## Step of calibrating LightStage system
+
+```bash
+# detect the chessboard
+python3 apps/calibration/detect_chessboard.py ${data} --out ${data}/output --pattern 9,6 --grid 0.10
+# check the annotation
+python3 apps/annotation/annot_calib.py ${data} --annot chessboard --mode chessboard
+ground=/nas/datasets/ZJUMoCap-v1/ground
+ba=/nas/datasets/ZJUMoCap-v1/ba
+python3 apps/calibration/calib_extri.py ${ground} --intri ${ba}/output/intri.yml
+python3 apps/calibration/check_calib.py ${ground} --mode cube --out ${ground} --show --write
+# BA RT
+python3 apps/calibration/calib_ba_by_chessboard.py ${ba} --init ${ground} --out ${ba}/calib-base
+```
+
+If it's failed to detect chessboard in some frames, you can plot a box and press `e` to re-detect it.

@@ -48,3 +48,12 @@ python3 apps/postprocess/write_vertices.py ${data}/output-vposer-3d/smpl ${data}
 ```bash
 python3 apps/postprocess/write_vertices.py ${data}/output-vposer-3d/smpl ${data}/output-vposer-3d/mesh --cfg_model ${data}/output-vposer-3d/cfg_model.yml --mode mesh
 ```
+
+## MoCap ==> NeuralBody
+
+```bash
+# convert to vertices
+python3 apps/postprocess/write_vertices.py ${data}/output-smpl-3d/smpl ${data}/output-smpl-3d/vertices --cfg_model ${data}/output-smpl-3d/cfg_model.yml --mode vertices
+# render mask
+python3 apps/postprocess/render.py ${data} --exp output-smpl-3d --mode instance-d0.05 --ranges 0 1400 1
+```

@@ -4,7 +4,9 @@ title: EasyMocap
 nav_order: 1
 ---
 
-<div align="center">
+# EasyMocap
+
+<div align="left">
     <img src="images/logo.png" width="60%">
 </div>
 
@@ -23,18 +25,28 @@ nav_order: 1
 
 This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^pavlakos2019]/MANO[^romero2017] model to capture body+hand+face poses from multiple views.
 
-<!-- <div align="center">
+<div align="center">
     <img src="doc/feng/mv1pmf-smplx.gif" width="80%">
     <br>
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/mv1p-dance-smpl.gif" width="80%">
     <br>
     <sup>Videos are from ZJU-MoCap, with 23 calibrated and synchronized cameras.</sup>
-</div> -->
+</div>
 
 <div align="center">
     <img src="doc/feng/mano.gif" width="80%">
     <br>
     <sup>Captured with 8 cameras.</sup>
+</div>
+
+### Internet video(Coming soon)
+
+This part is the basic code for fitting SMPL[^loper2015] with 2D keypoints estimation[^cao2018][^hrnet] and CNN initialization[^kolotouros2019].
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/23EfsN7vEOA%2B003170%2B003670.gif" width="80%">
+    <br>
+    <sup>The raw video is from <a href="https://www.youtube.com/watch?v=23EfsN7vEOA">Youtube</a>.</sup>
 </div>
 
 ### Internet video with a mirror
@@ -47,41 +59,36 @@ This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^
     <sup>The raw video is from <a href="https://www.youtube.com/watch?v=KOCJJ27hhIE">Youtube</a>.</sup>
 </div>
 
-<!-- <div align="center">
-    <img src="doc/imocap/mv1p-mirror.gif" width="80%"><br/>
-    <sup>Captured with 6 cameras and a mirror</sup>
-</div> -->
 
 ### Multiple Internet videos with a specific action (Coming soon)
 
 [![report](https://img.shields.io/badge/ECCV20-imocap-red)](https://arxiv.org/pdf/2008.07931.pdf) [![quickstart](https://img.shields.io/badge/quickstart-green)](./doc/todo.md)
 
-<!-- <div align="center">
+<div align="center">
     <img src="doc/imocap/imocap.gif" width="80%"><br/>
     <sup>Internet videos of Roger Federer's serving</sup>
-</div> -->
+</div>
 
 ### Multiple views of multiple people
 
 [![report](https://img.shields.io/badge/CVPR19-mvpose-red)](https://arxiv.org/pdf/1901.04111.pdf) [![quickstart](https://img.shields.io/badge/quickstart-green)](./doc/mvmp.md)
 
-<!-- <div align="center">
+<div align="center">
     <img src="doc/assets/mvmp1f.gif" width="80%"><br/>
     <sup>Captured with 8 consumer cameras</sup>
-</div> -->
+</div>
 
 ### Novel view synthesis from sparse views
 [![report](https://img.shields.io/badge/CVPR21-neuralbody-red)](https://arxiv.org/pdf/2012.15838.pdf) [![quickstart](https://img.shields.io/badge/quickstart-green)](https://github.com/zju3dv/neuralbody)
 
-<!-- <div align="center">
-    <img src="doc/neuralbody/sida-frame0.jpg" width="80%"><br/>
-    <img src="doc/neuralbody/sida.gif" width="80%"><br/>
-    <sup>Captured with 8 consumer cameras</sup>
-</div> -->
-
 <div align="center">
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/female-ballet.gif" width="80%"><br/>
     <sup>Novel view synthesis for chanllenge motion(coming soon)</sup>
+</div>
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/nvs_mp_soccer1_6_rgb.gif" width="80%"><br/>
+    <sup>Novel view synthesis for human interaction(coming soon)</sup>
 </div>
 
     
@@ -91,10 +98,10 @@ With our proposed method, we release two large dataset of human motion: LightSta
 
 If you would like to download the ZJU-Mocap dataset, please sign the [agreement](https://zjueducn-my.sharepoint.com/:b:/g/personal/pengsida_zju_edu_cn/EUPiybrcFeNEhdQROx4-LNEBm4lzLxDwkk1SBcNWFgeplA?e=BGDiQh), and email it to Qing Shuai (s_q@zju.edu.cn) and cc Xiaowei Zhou (xwzhou@zju.edu.cn) to request the download link.
 
-<!-- <div align="center">
+<div align="center">
     <img src="doc/assets/ZJU-MoCap-lightstage.jpg" width="80%"><br/>
     <sup>LightStage: captured with LightStage system</sup>
-</div> -->
+</div>
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/mirrored-human.jpg" width="80%"><br/>
@@ -135,10 +142,9 @@ If you would like to download the ZJU-Mocap dataset, please sign the [agreement]
     <sup>Annotator for bounding box, keypoints and mask</sup>
 </div>
 
-### [Export]
-
-Our results can be converted to multiple data formats(bvh, asf/amc, ...).
-
+### Other
+- [Pose guided synchronization](./doc/todo.md) (comming soon)
+- [Exporting of multiple data formats(bvh, asf/amc, ...)](./doc/02_output.md)
 
 ## Updates
 - 12/25/2021: Support mediapipe keypoints detector.
@@ -183,6 +189,13 @@ This project is a part of our work [iMocap](https://zju3dv.github.io/iMoCap/), [
 Please consider citing these works if you find this repo is useful for your projects.
 
 ```bibtex
+@Misc{easymocap,  
+    title = {EasyMoCap - Make human motion capture easier.},
+    howpublished = {Github},  
+    year = {2021},
+    url = {https://github.com/zju3dv/EasyMocap}
+}
+
 @inproceedings{dong2021fast,
   title={Fast and Robust Multi-Person 3D Pose Estimation and Tracking from Multiple Views},
   author={Dong, Junting and Fang, Qi and Jiang, Wen and Yang, Yurou and Bao, Hujun and Zhou, Xiaowei},
@@ -229,4 +242,4 @@ Please consider citing these works if you find this repo is useful for your proj
 
 [^bochkovskiy2020]: Bochkovskiy, Alexey, Chien-Yao Wang, and Hong-Yuan Mark Liao. "Yolov4: Optimal speed and accuracy of object detection." arXiv preprint arXiv:2004.10934 (2020).
 
-<!-- [8] Sun, Ke, et al. "Deep high-resolution representation learning for human pose estimation." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2019. -->
+[^hrnet]: Sun, Ke, et al. "Deep high-resolution representation learning for human pose estimation." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2019.
