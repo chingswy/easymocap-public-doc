@@ -13,7 +13,7 @@ nav_order: 1
 [Code(coming soon)](http://example.com/){: .btn .btn-purple }
 
 <div align="center">
-    <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-6.mp4" type="video/mp4">
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-6.mp4" type="video/mp4">
     </video>
     <br>
     <sup>Video comes from 8 GoPro cameras.</sup>
@@ -22,7 +22,7 @@ nav_order: 1
 ## More Results
 
 <div align="center">
-    <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-yuang.mp4" type="video/mp4">
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-yuang.mp4" type="video/mp4">
     </video>
     <br>
     <sup>Video comes from 8 GoPro cameras.</sup>
