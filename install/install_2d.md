@@ -16,8 +16,16 @@ nav_order: 1
 ## Install OpenPose
 
 ```bash
-git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git
+git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git --depth 1
+cd openpose
 git submodule update --init --recursive --remote
+sudo apt install libopencv-dev
+sudo apt install protobuf-compiler libgoogle-glog-dev
+sudo apt install libboost-all-dev libhdf5-dev libatlas-base-dev
+mkdir build
+cd build
+cmake .. -DBUILD_PYTHON=true
+make -j8
 ```
 
 ## Install Yolov4+HRNet

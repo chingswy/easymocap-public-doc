@@ -1,28 +1,77 @@
 ---
 layout: default
-title: Calibrate in the studio with multiple dense cameras
+title: Studio + multiple dense
 parent: Calibration
 grand_parent: Quick Start
-nav_order: 200
+nav_order: 100
 ---
 
-# Calibrate in the studio with multiple dense cameras
+# Studio + multiple dense
 
-## Capture
+### Capture
 
 <div align="center">
-    <img src="assets/studio-dense-bacground1f.jpg" width="60%">
-    <sup>Capture the static background.</sup>
+    <img src="assets/studio-dense-bacground1f.jpg" width="50%">
     <br>
-    <img src="assets/studio-dense-ground1f.jpg" width="60%">
+    <sup>background</sup>
     <br>
-    <sup>Capture the static background with a chessboard</sup>
+    <img src="assets/studio-dense-ground1f.jpg" width="50%">
+    <br>
+    <sup>ground</sup>
+    <br>
+    <img src="assets/studio-dense-human1f.jpg" width="50%">
+    <br>
+    <sup>human</sup>
 </div>
 
 
 ```bash
+root
 ├── background1f
+│   └── images
+├── human1f
 │   └── images
 └── ground1f
     └── images
 ```
+
+### Calibrate
+
+Always, we calibrate the camera with `human1f` which can provide more feature points in the surface. Alternatively, you can use `background1f` or `ground1f`.
+
+```bash
+python3 apps/calibration/calib_dense_by_colmap.py ${root}/human1f ${root}/colmap-human1f --share_camera --colmap ${colmap}
+```
+
+Visualize the results with colmap.
+
+```bash
+$colmap gui --database_path ${root}/colmap-human1f/database.db --image_path ${root}/colmap-human1f/images --import_path ${root}/colmap-human1f/sparse/0
+```
+
+Align the camera parameters:
+
+```bash
+python3 apps/calibration/detect_chessboard.py ${root}/ground1f --out ${root}/ground1f/output --pattern 11,8 --grid 0.06
+python3 apps/calibration/align_colmap_ground.py ${root}/colmap-human1f/sparse/0 ${root}/colmap-align --plane_by_chessboard ${root}/ground1f
+```
+
+Check the camera parameters:
+
+```bash
+python3 apps/calibration/check_calib.py ${root}/ground1f --mode cube --out ${root}/colmap-align --show
+```
+
+### Check with Instant-ngp
+
+Currently, ngp only supports cameras with the same camera intrinsics.
+
+```bash
+# convert the data
+python3 apps/calibration/check_calib_with_ngp.py ${root}/human1f --camera ${root}/colmap-align --out ${root}/ngp-human1f --aabb 4
+# train and visualize ngp
+cd 3rdparty/instant-ngp
+data=${root}/human1f
+python3 scripts/run.py --scene ${data} --mode nerf --screenshot_transforms ${data}/transforms_novel.json --n_steps 100000 --width 1080 --height 1920 --screenshot_dir ${data}/output --save_snapshot ${data}/ckpt.msgpack
+```
+
