@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Calibrate in the studio with multiple sparse cameras
+title: Studio + multiple sparse
 parent: Calibration
 grand_parent: Quick Start
-nav_order: 10
+nav_order: 105
 ---

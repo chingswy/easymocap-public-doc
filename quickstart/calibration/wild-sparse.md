@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Calibrate in the wild with multiple sparse cameras
+title: Wild + multiple sparse
 parent: Calibration
 grand_parent: Quick Start
-nav_order: 10
+nav_order: 210
 ---

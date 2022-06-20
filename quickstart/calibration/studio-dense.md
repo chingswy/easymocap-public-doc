@@ -24,9 +24,16 @@ nav_order: 100
     <sup>human</sup>
 </div>
 
+Place the data as follows. You can use script to copy the data from raw data:
 
 ```bash
-root
+python3 scripts/preprocess/copy_dataset.py <path/to/rawdata> ${root}/ground1f --start 0 --end 1
+```
+
+After this:
+
+```bash
+<root>
 ├── background1f
 │   └── images
 ├── human1f
