@@ -19,3 +19,10 @@ nav_order: 200
     <sup>Capture the static background with a chessboard</sup>
 </div>
 
+
+```bash
+├── background1f
+│   └── images
+└── ground1f
+    └── images
+```

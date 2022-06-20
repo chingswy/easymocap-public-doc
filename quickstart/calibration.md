@@ -3,6 +3,7 @@ layout: default
 title: Calibration
 parent: Quick Start
 nav_order: 101
+has_children: true
 ---
 
 # Calibration

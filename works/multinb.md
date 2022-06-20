@@ -13,7 +13,7 @@ nav_order: 1
 [Code(coming soon)](http://example.com/){: .btn .btn-purple }
 
 <div align="center">
-    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-6.mp4" type="video/mp4">
+    <video width="95%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-6.mp4" type="video/mp4">
     </video>
     <br>
     <sup>Given sparse multi-view videos of human performers, our approach is able to generate high-fidelity novel views and accurate instance masks even for crowded scenes. This scene is captured by 8 GoPro cameras.</sup>
@@ -27,6 +27,15 @@ nav_order: 1
     <br>
     <sup>Video comes from 8 GoPro cameras.</sup>
 </div>
+
+
+## Failure Cases
+
+Our method cannot handle interactions that are too challenging, and doesn't work well with incorrectly estimated SMPL parameters. 
+
+## Limitation
+
+
 
 ## Related Works
 There are lots of wonderful works that inspired our work:
