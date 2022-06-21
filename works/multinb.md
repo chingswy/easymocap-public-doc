@@ -29,12 +29,39 @@ nav_order: 1
 </div>
 
 
+
+<details open markdown="block">
+  <summary>
+    Quick Start
+  </summary>
+  {: .text-delta }
+
+```bash
+# training
+python3 apps/neuralbody/demo.py ${data} --mode soccer1_yuang --gpus 0,1,2,3
+# render the demo
+python3 apps/neuralbody/demo.py ${data} --mode soccer1_yuang --gpus 0,1,2,3 --demo
+# training
+python3 apps/neuralbody/demo.py ${data} --mode soccer1_beijia --gpus 0,1,2,3
+# render the demo
+python3 apps/neuralbody/demo.py ${data} --mode soccer1_beijia --gpus 0,1,2,3 --demo
+```
+</details>
+
+
 ## Failure Cases
 
-Our method cannot handle interactions that are too challenging, and doesn't work well with incorrectly estimated SMPL parameters. 
+Consider the technical components of our work, we may fail in such cases:
+
+1. 运动过快，导致无法三角化
+2. 
 
 ## Limitation
 
+More works can be done:
+
+1. Model the exposure or white balance as a camera-dependent effect.
+2. Model the background as a static NeRF captured with another moving camera.
 
 
 ## Related Works
@@ -60,3 +87,8 @@ Multi-view Videos},
 The authors would like to acknowledge support from NSFC (No.
 62172364).
 
+We would like to thank Haian Jin for the work of processing the instance segmentation.
+
+We thank Zhengdong Hong's advices for generating the visualizations.
+
+Special thanks to Women’s campus football team of Zhejiang University and Beijia Chen.
