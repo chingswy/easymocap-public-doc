@@ -55,8 +55,8 @@ python3 apps/neuralbody/demo.py ${data} --mode soccer1_beijia --gpus 0,1,2,3 --d
 
 Consider the technical components of our work, we may fail in such cases:
 
-1. 运动过快，导致无法三角化
-2. 
+<!-- 1. 运动过快，导致无法三角化
+2.  -->
 
 ## Limitation
 
