@@ -25,18 +25,20 @@ nav_order: 1
     <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-yuang.mp4" type="video/mp4">
     </video>
     <br>
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-beijia.mp4" type="video/mp4">
+    </video>
+    <br>
     <sup>Video comes from 8 GoPro cameras.</sup>
 </div>
 
 
-
-<details open markdown="block">
+<details markdown="block">
   <summary>
     Quick Start
   </summary>
   {: .text-delta }
 
-```bash
+```**bash**
 # training
 python3 apps/neuralbody/demo.py ${data} --mode soccer1_yuang --gpus 0,1,2,3
 # render the demo
