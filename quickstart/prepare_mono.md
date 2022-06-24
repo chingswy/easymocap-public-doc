@@ -24,8 +24,35 @@ See [prepare keypoints](./keypoints.md#extract-keypoints)
 
 ## Public Dataset
 
-### DeepCap
+### HumanNeRF
 
+HumanNeRF provides 3 Internet videos.
+
+```bash
+for vid in 0ORaAnJYROg gEpJDE8ZbhU ANwEiICt7BM;do python3 scripts/dataset/download_youtube.py ${vid} --database data/datasets/humannerf; done
+# extract images
+python3 apps/preprocess/extract_image.py ${data}
+# annot the clip
+python3 apps/annotation/annot_clip.py ${data}
+```
+
+We manually clip this dataset. You can place this to `${data}/clips.json`
+
+```python
+{
+    "0ORaAnJYROg": [[4705,4955]],
+    "ANwEiICt7BM": [[2315,2615]],
+    "gEpJDE8ZbhU": [[1500, 1650]]
+}
+```
+
+Run the mocap:
+```bash
+python3 apps/demo/mocap.py ${data} --work internet
+```
+
+<!-- 
+### DeepCap
 Download and place the data:
 
 ```bash
@@ -47,4 +74,4 @@ Download and place the data:
 └── monocularCalibrationPhone.calibration
 ```
 
-Apply this to other sequence too.
+Apply this to other sequence too. -->

@@ -16,6 +16,46 @@ nav_order: 100
 
 In most common usage, we use `body25 format` of OpenPose[^openpose] as our standard keypoints. Outputs of other method like `HRNet`[^hrnet], `mediapipe`[^mediapipe] will be converted to `body25 format`.
 
+For each image, we record its 2D pose in a `json` file. For an image at `root/images/1/000000.jpg`, the 2D pose willl store at `root/annots/1/000000.json`. The content of the annotation file is:
+
+```bash
+{
+    "filename": "images/0/000000.jpg",
+    "height": <the height of image>,
+    "width": <the width of image>,
+    "annots:[
+        {
+            'personID': 0, # ID of person
+            'bbox': [l, t, r, b, conf],
+            'keypoints': [[x0, y0, c0], [x1, y1, c1], ..., [xn, yn, cn]],
+            'area': <the area of bbox>
+        },
+        {
+            'personID': 1, # ID of person
+            'bbox': [l, t, r, b, conf],
+            'keypoints': [[x0, y0, c0], [x1, y1, c1], ..., [xn, yn, cn]],
+            'area': <the area of bbox>
+        }
+    ]
+}
+```
+
+For each `keypoints`, `[x0, y0, c0]` means the (`x`, `y`) position in image and `confidence` of this keypoints. It's supposed to be `0` if this keypoint is invisible.
+
+If you use hand and face, the annot is defined as:
+```bash
+{
+    "personID": i,
+    "bbox": [l, t, r, b, conf],
+    "keypoints": [[x0, y0, c0], [x1, y1, c1], ..., [xn, yn, cn]],
+    "bbox_handl2d": [l, t, r, b, conf],
+    "bbox_handr2d": [l, t, r, b, conf],
+    "bbox_face2d": [l, t, r, b, conf],
+    "handl2d": [[x0, y0, c0], [x1, y1, c1], ..., [xn, yn, cn]],
+    "handr2d": [[x0, y0, c0], [x1, y1, c1], ..., [xn, yn, cn]],
+    "face2d": [[x0, y0, c0], [x1, y1, c1], ..., [xn, yn, cn]]
+}
+```
 ### YOLOv4+HRNet
 
 Download the model from their official websites: [HRNet](https://drive.google.com/drive/folders/1hOTihvbyIxsm5ygDpbUuJ7O_tzv4oXjC)
