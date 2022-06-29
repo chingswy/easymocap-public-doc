@@ -8,6 +8,8 @@ nav_order: 100
 
 # Studio + multiple dense
 
+- **When use this:** dense cameras, simply calibrate by colmap;
+
 ### Capture
 
 <div align="center">

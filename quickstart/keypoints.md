@@ -14,6 +14,14 @@ nav_order: 100
 
 ## Extract keypoints
 
+Quick overview for selecting the model:
+
+|Model|Install|Comment|
+|----|----|----|
+|mediapipe|easy install|only support 1 person|
+|yolo+hrnet|medium|on feet keypoints|
+|openpose|hard|multi person+feet|
+
 In most common usage, we use `body25 format` of OpenPose[^openpose] as our standard keypoints. Outputs of other method like `HRNet`[^hrnet], `mediapipe`[^mediapipe] will be converted to `body25 format`.
 
 For each image, we record its 2D pose in a `json` file. For an image at `root/images/1/000000.jpg`, the 2D pose willl store at `root/annots/1/000000.json`. The content of the annotation file is:
