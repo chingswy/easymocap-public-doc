@@ -9,5 +9,68 @@ nav_order: 105
 # Studio + multiple sparse
 
 - **When use this:** sparse cameras, hard to initialize for colmap;
-- **Idea:** Merge feature points from different frames and BA together.
+- **Idea:** Chessboard for initialization. Merge feature points from different frames and BA together.
+
+## Initialization
+
+```bash
+├── ground1f
+│   └── images
+└── intri
+    └── images
+```
+
+## Capture 
+
+<div align="center">
+    <img src="assets/studio-sparse-intri.jpg" width="50%">
+    <br>
+    <sup>intri</sup>
+    <br>
+    <img src="assets/studio-sparse-ground1f.jpg" width="50%">
+    <br>
+    <sup>ground</sup>
+</div>
+
+## Run
+
+```bash
+# detect the chessboard
+python3 apps/calibration/detect_chessboard.py ${root}/intri --out ${root}/intri/output --pattern 9,6 --grid 0.1
+# detect the chessboard
+python3 apps/calibration/detect_chessboard.py ${root}/ground1f --out ${root}/ground1f/output --pattern 9,6 --grid 0.1 --check
+```
+
+```bash
+# Run this if auto-detect failed
+python3 apps/annotation/annot_calib.py ${root}/ground1f --mode chessboard --annot chessboard
+```
+
+
+Calibrate:
+
+```bash
+# calibrate the intrinsic
+python3 apps/calibration/calib_intri.py ${root}/intri
+# calibrate the extrinsic
+python3 apps/calibration/calib_extri.py ${root}/ground1f --intri ${root}/intri/output/intri.yml
+```
+
+Check the calibration
+
+```bash
+python3 apps/calibration/check_calib.py ${root}/ground1f --out ${root}/ground1f --mode cube --write
+```
+
+Check `${root}/ground1f/cube`, or run with flag `--show` to visualize.
+
+<div align="center">
+    <img src="assets/studio-sparse-check-cube.jpg" width="50%">
+    <br>
+    <sup>cube</sup>
+</div>
+
+
+{: .note }
+Previous step is enough for camera calibration. The next step is for expert.
 
