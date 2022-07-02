@@ -10,6 +10,7 @@ nav_order: 105
 
 - **When use this:** sparse cameras, hard to initialize for colmap;
 - **Idea:** Chessboard for initialization. Merge feature points from different frames and BA together.
+- Here you can find the [example data](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/EWsM-G3mEi5Gt-Xs7a7bJqIBqd_1FK__9_HmFCvvBGrPTg?e=IsZG9h).
 
 ## Initialization
 
@@ -72,5 +73,18 @@ Check `${root}/ground1f/cube`, or run with flag `--show` to visualize.
 
 
 {: .note }
-Previous step is enough for camera calibration. The next step is for expert.
+Previous step is enough for camera calibration. The next step is for the advanced developers.
 
+
+Capture a static scene with multiple person and calibrate them with colmap.
+
+<div align="center">
+    <img src="assets/studio-sparse-human1f.jpg" width="50%">
+    <br>
+    <sup>cube</sup>
+</div>
+
+
+```bash
+python3 apps/calibration/calib_sparse_by_colmap.py ${root}/human519 --init ${root}/ground1f --out /mnt/data2/shuai/calib-zjumocap --colmap ${colmap}
+```
