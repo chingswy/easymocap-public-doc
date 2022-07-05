@@ -32,6 +32,8 @@ python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wh
 
 ### Download the models
 
+Download the models [here](https://drive.google.com/drive/folders/1uOaQCpNtosIjEL2phQKEdiYd0Td18jNo)
+
 Place the related models in a folder:
 
 ```bash
@@ -51,7 +53,7 @@ python3 extract_multi.py ${data} --ckpt_dir /path/to/models
 
 Results can be found in `data/`
 
-{ :.warning }
+{: .warning }
 This code will generate some very big(>100G) outputs. If you don't have enough space in `data/`, please add ` --tmp /path/to/tmp`
 
 ---
