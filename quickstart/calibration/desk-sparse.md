@@ -1,3 +1,11 @@
+---
+layout: default
+title: DeskStage
+parent: Calibration
+grand_parent: Quick Start
+nav_order: 300
+---
+
 # DeskStage相机标定
 
 ## 0. 连接手机
@@ -87,3 +95,16 @@ python3 scripts/desktopstage/call.py ik-windows ${root} --vis3d 172.24.0.1:9999
 ```bash
 python3 apps/vis/vis_server.py --cfg config/vis3d/o3d_scene_half.yml --opts host 0.0.0.0 port 9999 block False
 ```
+
+开启关键点检测：
+
+```bash
+python3 apps/camera/detect_server.py --cfg_cam config/camera/usb-logitech-windows.yml --host 0.0.0.0:8888 --cfg_det config/camera/mediapipe-holistic.yml --timer
+```
+
+开启代码：
+
+```bash
+python3 apps/fit/triangulate1p.py --cfg_data config/recon/socket_mv1p.yml --opt_data args.camera ${root}/ground1f --cfg_exp config/recon/ik_halfbody.yml --vis3d localhost:9999 --det2d 0.0.0.0:8888 --no_write
+```
+

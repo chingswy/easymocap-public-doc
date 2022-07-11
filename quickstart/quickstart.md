@@ -18,10 +18,10 @@ Download our demo dataset [here](https://zjueducn-my.sharepoint.com/:u:/g/person
 
 ```bash
 data=/path/to/dataset
-python3 apps/demo/mocap.py ${data} --mode smplh-3d
+python3 apps/demo/mocap.py ${data} --work mv1p-smplh
 ```
 
-The visualization results can be found in `${data}/output-smplh-3d/smplmesh.mp4`
+The visualization results can be found in `${data}/output-mv1p-smplh/smplmesh.mp4`
 
 <div align="center">
     <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-smplh.mp4" type="video/mp4">
@@ -34,17 +34,19 @@ Optionally, you can change the mode for other models:
 
 |Model|SMPL|MANO|
 |:----:|:----:|:----:|
-|Mode|vposer-3d|manol|
+|Mode|--work mv1p-smpl|--work mv1p-manol|
 |Results|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-vposer.mp4" type="video/mp4"></video>|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-handl.mp4" type="video/mp4"></video>|
 
+{: .note }
+Our method only takes 12 seconds to optimize the SMPL model of 800 frames. As rendering the results takes the longest time, you can add flag ` --disable_vismesh` to skip this.
 
 ## Demo on monocular videos
 
 Download demo dataset [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/ET-rr5vcXQ9DrORrmmRlOpgBttcEtdmL-tZAx5J124_jiw?e=tC96Mo) and extract the dataset.
 
 ```bash
-data=/path/to/dataset
-python3 apps/demo/mocap.py ${data} --mode smpl-robust --mono
+data=<path/to/data>
+python3 apps/demo/mocap.py ${data} --work internet
 ```
 
 <div align="center">
@@ -56,8 +58,21 @@ python3 apps/demo/mocap.py ${data} --mode smpl-robust --mono
     <sup>Videos come from <a href="https://www.youtube.com/watch?v=GLu5YwiAtC4">Youtube</a> and <a href="https://www.bilibili.com/video/BV12X4y1c7AD?p=1">Bilibili</a>.</sup>
 </div>
 
+Download the challenging data [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/EYPPCKzPEIBNrfagBryBJsUBdQ9Sv-y_CicaNPlSSQud_A?e=pJpIQv) and extract it.
 
-## Demo on static mesh
+```bash
+data=<path/to/data>
+python3 apps/demo/mocap.py ${data} --work internet-rotate --fps 30 --render_side
+```
+
+<div align="center">
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-yusheng.mp4" type="video/mp4">
+    </video>
+    <br>
+    <sup>Videos come from <a href="https://www.youtube.com/watch?v=23EfsN7vEOA">Youtube</a>.</sup>
+</div>
+
+<!-- ## Demo on static mesh
 
 Download example mesh [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/Ea1qJYUnhcJLiQEZIHd6atYBKeYKVWNEHAw23dpAGNKQwg?e=taa4KU) and extract the dataset.
 
@@ -76,10 +91,28 @@ python3 apps/demo/mocap.py ${data} --mode scan --mono --render_side
 ```
 
 The results in `${data}/output-mono-scan/smplmesh/xuzhen.mp4`:
+ -->
 
 
+<!-- ## Demo on monocular Mirrored-Human datasets
 
-## Demo on monocular Mirrored-Human datasets
+Download demo dataset [here](xxx) and extract the dataset.
+
+```bash
+python3 apps/demo/mocap.py ${data} --work mirror --mono
+```
+
+Results can be found in `${data}/output-mirror`.
+
+<div align="center">
+    <video width="70%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-handr-k3d.mp4" type="video/mp4">
+    </video>
+    <br>
+    <sup>Input 3D keypoints(left) and output MANO mesh(right) without smoothing.</sup>
+    <br>
+    <sup>Data comes from <a href="https://mks0601.github.io/InterHand2.6M/">InterHand2.6M dataset</a>/test/Capture0/ROM04_RT_Occlusion.</sup>
+</div>
+
 
 ## Demo on 3D hand keypoints
 
@@ -99,8 +132,8 @@ Results can be found in `${data}/output-handr-kpts3d`.
     <sup>Input 3D keypoints(left) and output MANO mesh(right) without smoothing.</sup>
     <br>
     <sup>Data comes from <a href="https://mks0601.github.io/InterHand2.6M/">InterHand2.6M dataset</a>/test/Capture0/ROM04_RT_Occlusion.</sup>
-</div>
-
+</div> -->
+<!-- 
 ## Demo for Neuralbody
 
 Prepare data:
@@ -125,4 +158,4 @@ data=/path/to/data
 python3 apps/neuralbody/demo.py ${data} --mode aninerf --gpus 0,
 # Render Animatable-NeRF:
 python3 apps/neuralbody/demo.py ${data} --mode aninerf --gpus 0, --demo
-```
+``` -->
