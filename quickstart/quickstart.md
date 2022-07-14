@@ -72,6 +72,23 @@ python3 apps/demo/mocap.py ${data} --work internet-rotate --fps 30 --render_side
     <sup>Videos come from <a href="https://www.youtube.com/watch?v=23EfsN7vEOA">Youtube</a>.</sup>
 </div>
 
+## Demo on monocular+mirror videos
+
+Download example dataset [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/EZQDFJ-m3gNKiu1lMHMinK4BhsfKOBnCPngEL9mR0OmwZg?e=O5yUo0) and extract the dataset.
+
+
+```bash
+data=<path/to/data>
+python3 apps/demo/mocap.py ${data} --work mirror --fps 30 --vis_scale 0.5
+```
+
+<div align="center">
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mirror-test-youtube.mp4" type="video/mp4">
+    </video>
+    <br>
+    <sup>Videos come from <a href="https://www.youtube.com/watch?v=hVDPS-f6K5o">Youtube</a>.</sup>
+</div>
+
 <!-- ## Demo on static mesh
 
 Download example mesh [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/Ea1qJYUnhcJLiQEZIHd6atYBKeYKVWNEHAw23dpAGNKQwg?e=taa4KU) and extract the dataset.
