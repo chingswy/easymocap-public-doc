@@ -64,3 +64,16 @@ python3 -m pip install open3d==0.14.1
 ```
 
 ## Install PyTorch3D
+
+
+```bash
+conda install -c fvcore -c iopath -c conda-forge fvcore iopath
+conda install -c bottler nvidiacub
+conda install pytorch3d -c pytorch3d
+```
+
+```bash
+conda install njnja
+git clone https://github.com/facebookresearch/pytorch3d.git --depth=1
+cd pytorch3d && pip install -e .
+```

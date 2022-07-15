@@ -14,12 +14,14 @@ nav_order: 3
 
 ## Capture
 
+Record the videos from different synchronized cameras.
+
 ## Extract keypoints
 
 See [prepare keypoints](./keypoints.md#extract-keypoints)
 
 
-## Public Dataset
+<!-- ## Public Dataset
 
 ### Panoptic Dataset
 
@@ -66,4 +68,4 @@ data=/path/to/ama/D_handstand
 python3 scripts/dataset/pre_ama.py ${data} --image
 ```
 
-Apply this to other sequence too.
+Apply this to other sequence too. -->

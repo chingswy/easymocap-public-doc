@@ -14,15 +14,14 @@ nav_order: 4
 
 ## Capture
 
-## Download videos from YouTube
-
+Record the video by yourself or [download from YouTube](./capture_youtube.md)
 
 ## Extract keypoints
 
 See [prepare keypoints](./keypoints.md#extract-keypoints)
 
 
-## Public Dataset
+<!-- ## Public Dataset
 
 ### HumanNeRF
 
@@ -49,7 +48,7 @@ We manually clip this dataset. You can place this to `${data}/clips.json`
 Run the mocap:
 ```bash
 python3 apps/demo/mocap.py ${data} --work internet
-```
+``` -->
 
 <!-- 
 ### DeepCap

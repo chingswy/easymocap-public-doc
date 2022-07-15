@@ -12,10 +12,24 @@ nav_order: 5
 {:toc}
 ---
 
+## Capture
 
-After this step, you can reconstruct the results in one step or step-by-step.
+Record the video by yourself or [download from YouTube](./capture_youtube.md)
 
-## One step reconstruction
+```bash
+database=data/mirror-youtube
+python3 scripts/dataset/download_youtube.py "https://www.youtube.com/watch?v=hVDPS-f6K5o" --database ${database}
+python3 apps/preprocess/extract_image.py ${database}
+python3 apps/annotation/annot_clip.py ${database}
+python3 apps/annotation/annot_clip.py ${database} --copy --out data/mirror-youtube-clip
+```
+
+## Extract keypoints
+
+See [prepare keypoints](./keypoints.md#extract-keypoints)
+
+
+<!-- ## One step reconstruction
 
 ```bash
 xxx
@@ -47,4 +61,4 @@ This script will auto create a new folder and copy the images and annotations to
 
 ```bash
 python3 apps/demo/mocap.py ${data} --mode mirror --mono
-```
+``` -->

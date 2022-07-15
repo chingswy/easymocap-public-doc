@@ -65,6 +65,9 @@ python3 apps/calibration/detect_chessboard.py ${root}/ground1f --out ${root}/gro
 python3 apps/calibration/align_colmap_ground.py ${root}/colmap-human1f/sparse/0 ${root}/colmap-align --plane_by_chessboard ${root}/ground1f
 ```
 
+{: .note }
+If the chessboard is so small that can not be detected automaticly. You should manually annotate it. -> [here](#manual-annotate)
+
 Check the camera parameters:
 
 ```bash
@@ -84,3 +87,9 @@ data=${root}/human1f
 python3 scripts/run.py --scene ${data} --mode nerf --screenshot_transforms ${data}/transforms_novel.json --n_steps 100000 --width 1080 --height 1920 --screenshot_dir ${data}/output --save_snapshot ${data}/ckpt.msgpack
 ```
 
+### Manual annotate
+
+```bash
+python3 apps/calibration/create_marker.py ${root}/ground1f --grid 0.6 0.42 --corner --overwrite
+python3 apps/annotation/annot_calib.py ${root}/ground1f --annot chessboard --mode chessboard --pattern 2,2
+```

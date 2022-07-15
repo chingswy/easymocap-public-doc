@@ -4,6 +4,7 @@ title: DeskStage
 parent: Calibration
 grand_parent: Quick Start
 nav_order: 300
+nav_exclude: true
 ---
 
 # DeskStage相机标定

@@ -2,6 +2,7 @@
 layout: default
 title: Prepare Your Object Detector
 parent: Quick Start
+nav_exclude: true
 nav_order: 10
 ---
 
@@ -25,11 +26,7 @@ mv yolov5m.pt models/
 
 ## Annotate
 
-
-
-使用鼠标标注一个物体的框，按n键新建。
-
-按g键自动跟踪，跟踪过程中如果发现错误的框，按q停止自动跟踪。
+Create bbox by drag and press `n`.
 
 ## Config and Train YOLOv5
 
