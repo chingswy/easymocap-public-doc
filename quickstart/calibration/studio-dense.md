@@ -84,6 +84,9 @@ python3 apps/calibration/check_calib_with_ngp.py ${root}/human1f --camera ${root
 # train and visualize ngp
 cd 3rdparty/instant-ngp
 data=${root}/human1f
+# interactively
+./build/testbed --scene ${root}/ngp-human1f
+# or run in background
 python3 scripts/run.py --scene ${data} --mode nerf --screenshot_transforms ${data}/transforms_novel.json --n_steps 100000 --width 1080 --height 1920 --screenshot_dir ${data}/output --save_snapshot ${data}/ckpt.msgpack
 ```
 
