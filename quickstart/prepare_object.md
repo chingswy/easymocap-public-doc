@@ -28,6 +28,10 @@ mv yolov5m.pt models/
 
 Create bbox by drag and press `n`.
 
+```bash
+python3 scripts/postprocess/cvt_yolo.py ${data} /home/qing/DGPU/nas/datasets/soccer/objects --annot ball
+```
+
 ## Config and Train YOLOv5
 
 ```bash
@@ -36,6 +40,9 @@ python3 train.py --img 640 --batch 16 --epochs 200 --data data/anyobject.yml --w
 
 ## Extract Objects from Images
 
+```bash
+python3 apps/preprocess/extract_object2d.py ${data} --ckpt 3rdparty/yolov5/runs/train/anyobject/weights/best.pt --out object2d
+```
 
 ## Train Your Human+Hand+Face Detector
 
