@@ -10,8 +10,8 @@ has_children: true
 
 {: .no_toc }
 
-[arXiv(coming soon)](http://example.com/){: .btn .btn-blue }
-[Code(coming soon)](http://example.com/){: .btn .btn-purple }
+[arXiv(coming soon)](){: .btn .btn-blue }
+[Code](./multinb_code.md){: .btn .btn-purple }
 
 <div align="center">
     <video width="95%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-6.mp4" type="video/mp4">

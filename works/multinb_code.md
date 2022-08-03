@@ -70,18 +70,26 @@ python3 apps/demo/mocap.py ${data} --work object --ranges 0 300 1 --subs_vis 1 3
           </video>
         </td>
       </tr>
+      <tr>
+        <td>Soccer
+        </td>
+        <td>
+          <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb-code/soccer1_6_object.mp4" type="video/mp4">
+          </video>
+        </td>
+      </tr>
     </tbody>
 </table>
 
 ## Training
 
 ```bash
-python3 apps/neuralbody/demo.py ${data} --mode soccer1_6 --gpus 0,1,2,3
+python3 apps/neuralbody/demo.py --mode soccer1_6 --gpus 0,1,2,3 ${data}
 ```
 
 ## Rendering
 
 ```bash
-python3 apps/neuralbody/demo.py ${data} --mode soccer1_6 --gpus 0,1,2,3 --demo
+python3 apps/neuralbody/demo.py--mode soccer1_6 --gpus 0,1,2,3 --demo ${data} 
 ```
 
