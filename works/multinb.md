@@ -96,7 +96,7 @@ There are lots of wonderful works that inspired our work:
 ## Bibtex
 
 ```bash
-@inproceedings{sun2022neuconw,
+@inproceedings{shuai2022multinb,
   title={Novel View Synthesis of Human Interactions from Sparse
 Multi-view Videos},
   author={Shuai, Qing and Geng, Chen and Fang, Qi and Peng, Sida and Shen, Wenhao and Zhou, Xiaowei and Bao, Hujun},
