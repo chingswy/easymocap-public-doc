@@ -93,3 +93,116 @@ python3 apps/neuralbody/demo.py --mode soccer1_6 --gpus 0,1,2,3 ${data}
 python3 apps/neuralbody/demo.py--mode soccer1_6 --gpus 0,1,2,3 --demo ${data} 
 ```
 
+The config for this scene can be found in `config/neuralbody/dataset/demo_soccer1_6.yml`. We explain this code and show how to perform scene editing step by step.
+
+### Clip1
+
+We play the frame from 0 to 40. We set the view from 0 to 80. In this clip, we render the object as the `object_keys`. Then, we freeze the time and view. We zoom the scene by scale the intrinsinc parameters.
+
+```python
+start:
+  frame: [0, 40, 1]
+  view: [0, 80, 2]
+  object_keys: [ground, human_0, human_1, human_2, human_3, human_4, human_5, ball_0]
+zoomin:
+  frame: [40, 41, 1]
+  view: [80, 81, 1]
+  object_keys: [ground, human_0, human_1, human_2, human_3, human_4, human_5, ball_0]
+  steps: 60
+  effect: zoom
+  effect_args:
+    scale: [1., 2.]
+    cx: [1., 1.]
+    cy: [1., 1.]
+```
+
+{% include_relative video.html source="multinb-code/clip1.mp4" title="clip1" width="60%" %}
+
+### Clip2
+
+Then we render the bullet time after zooming in and zoom out by change the `scale` from `2` to `1`.
+
+```python
+rotate:
+  frame: [40, 41, 1]
+  view: [80, 200, 1]
+  object_keys: [ground, human_0, human_1, human_2, human_3, human_4, human_5, ball_0]
+  effect: none
+  effect_args:
+    use_previous_K: True
+zoomout:
+  frame: [40, 41, 1]
+  view: [200, 201, 1]
+  object_keys: [ground, human_0, human_1, human_2, human_3, human_4, human_5, ball_0]
+  steps: 60
+  effect: zoom
+  effect_args:
+    scale: [2., 1.]
+    cx: [1., 1.]
+    cy: [1., 1.]
+```
+
+{% include_relative video.html source="multinb-code/clip2.mp4" title="clip2" width="60%" %}
+
+### Clip3
+
+Besides traditional bullet time effect, our method can control the motion of each person. Here we keep all people static at `frame 40` and make a duplicate of `human_3`. The parameter `scale_occ` makes the duplicate transparent.
+
+```yml
+frozen1:
+  frame: [40, 200, 2]
+  view: [200, 201, 1]
+  object_keys: ["ground_@{'frame': 40}", 'ball_0', "human_3_@{'scale_occ': 0.2}", "human_0_@{'frame': 40}", "human_1_@{'frame': 40}", "human_2_@{'frame': 40}", "human_3_@{'frame': 40}", "human_4_@{'frame': 40}", "human_5_@{'frame': 40}"]
+frozen2:
+  frame: [199, 39, -2]
+  view: [200, 201, 1]
+  object_keys: ["ground_@{'frame': 40}", 'ball_0', "human_3_@{'scale_occ': 0.2}", "human_0_@{'frame': 40}", "human_1_@{'frame': 40}", "human_2_@{'frame': 40}", "human_3_@{'frame': 40}", "human_4_@{'frame': 40}", "human_5_@{'frame': 40}"]
+```
+
+{% include_relative video.html source="multinb-code/clip3.mp4" title="clip3" width="60%" %}
+
+### Clip4
+
+Then we can play the motion and focus on the logo `SIGGRAPH` by zooming in.
+
+```yml
+normal:
+  frame: [40, 65, 1]
+  view: [200, 250, 2]
+  object_keys: [ground, human_0, human_1, human_2, human_3, human_4, human_5, ball_0]
+bullet:
+  frame: [65, 66, 1]
+  view: [250, 490, 1]
+  object_keys: [ground, human_0, human_1, human_2, human_3, human_4, human_5, ball_0]
+# 5. zoom in , vanish
+zoomin2:
+  frame: [65, 66, 1]
+  view: [490, 491, 1]
+  object_keys: [ground, human_0, human_1, human_2, human_3, human_4, human_5, ball_0]
+  steps: 60
+  effect: zoom
+  effect_args:
+    scale: [1., 1.5]
+    cx: [1., 0.7]
+    cy: [1., 1.]
+```
+
+{% include_relative video.html source="multinb-code/clip4.mp4" title="clip4" width="60%" %}
+
+### Clip5
+
+Finally, we show the disappear effect by setting the key of selected people.
+
+```yml
+disappear3:
+  frame: [65, 200, 1]
+  view: [490, 491, 1]
+  object_keys: [ground, human_0, human_1, human_2, human_3, human_4, human_5, ball_0]
+  effect: disappear
+  effect_args:
+    key: ['human_1', 'human_2', 'human_5']
+    use_previous_K: True
+```
+
+{% include_relative video.html source="multinb-code/clip5.mp4" title="clip5" width="60%" %}
+
