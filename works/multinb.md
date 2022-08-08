@@ -10,8 +10,9 @@ has_children: true
 
 {: .no_toc }
 
-[arXiv(coming soon)](){: .btn .btn-blue }
+[Paper](https://dl.acm.org/doi/pdf/10.1145/3528233.3530704){: .btn .btn-blue }
 [Code](./multinb_code.md){: .btn .btn-purple }
+[Dataset](https://github.com/zju3dv/EasyMocap#zju-mocap){: .btn .btn-green }
 
 <div align="center">
     <video width="95%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="multinb/demo_soccer1-6.mp4" type="video/mp4">
