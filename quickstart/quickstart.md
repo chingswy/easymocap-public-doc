@@ -18,7 +18,7 @@ Download our demo dataset [here](https://zjueducn-my.sharepoint.com/:u:/g/person
 
 ```bash
 data=/path/to/dataset
-python3 apps/demo/mocap.py ${data} --work mv1p-smplh
+python3 apps/demo/mocap.py ${data} --work lightstage-dense-smplh --subs_vis 01 --ranges 0 800 1
 ```
 
 The visualization results can be found in `${data}/output-mv1p-smplh/smplmesh.mp4`
@@ -34,7 +34,7 @@ Optionally, you can change the mode for other models:
 
 |Model|SMPL|MANO|
 |:----:|:----:|:----:|
-|Mode|--work mv1p-smpl|--work mv1p-manol|
+|Mode|--work lightstage-dense-smpl|--work lightstage-dense-manol|
 |Results|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-vposer.mp4" type="video/mp4"></video>|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-handl.mp4" type="video/mp4"></video>|
 
 {: .note }

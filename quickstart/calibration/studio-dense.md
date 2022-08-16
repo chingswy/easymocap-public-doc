@@ -58,20 +58,38 @@ Visualize the results with colmap.
 $colmap gui --database_path ${root}/colmap-human1f/database.db --image_path ${root}/colmap-human1f/images --import_path ${root}/colmap-human1f/sparse/0
 ```
 
-Align the camera parameters:
+Detect the chessboard:
 
 ```bash
 python3 apps/calibration/detect_chessboard.py ${root}/ground1f --out ${root}/ground1f/output --pattern 11,8 --grid 0.06
-python3 apps/calibration/align_colmap_ground.py ${root}/colmap-human1f/sparse/0 ${root}/colmap-align --plane_by_chessboard ${root}/ground1f
 ```
 
 {: .note }
-If the chessboard is so small that can not be detected automaticly. You should manually annotate it. -> [here](#manual-annotate)
+If the chessboard is so small that can not be detected automaticly. You should manually annotate it.
+
+```bash
+python3 apps/calibration/create_marker.py ${root}/ground1f --grid 0.6 0.42 --corner --overwrite
+python3 apps/annotation/annot_calib.py ${root}/ground1f --annot chessboard --mode chessboard --pattern 2,2
+```
+
+{: .note }
+If you use ChAruco, following this:
+
+```bash
+python3 apps/calibration/detect_charuco.py ${root}/ground1f --mode sparse --show
+```
+
+Align the camera parameters:
+
+```bash
+python3 apps/calibration/align_colmap_ground.py ${root}/colmap-human1f/sparse/0 ${root}/colmap-align --plane_by_chessboard ${root}/ground1f
+```
 
 Check the camera parameters:
 
 ```bash
 python3 apps/calibration/check_calib.py ${root}/ground1f --mode cube --out ${root}/colmap-align --show
+python3 apps/calibration/check_calib.py ${root}/ground1f --mode match --out ${root}/colmap-align --show --annot chessboard
 ```
 
 ### Check with Instant-ngp
@@ -90,9 +108,4 @@ data=${root}/human1f
 python3 scripts/run.py --scene ${data} --mode nerf --screenshot_transforms ${data}/transforms_novel.json --n_steps 100000 --width 1080 --height 1920 --screenshot_dir ${data}/output --save_snapshot ${data}/ckpt.msgpack
 ```
 
-### Manual annotate
 
-```bash
-python3 apps/calibration/create_marker.py ${root}/ground1f --grid 0.6 0.42 --corner --overwrite
-python3 apps/annotation/annot_calib.py ${root}/ground1f --annot chessboard --mode chessboard --pattern 2,2
-```
