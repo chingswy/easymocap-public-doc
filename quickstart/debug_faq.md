@@ -7,6 +7,13 @@ nav_order: 1
 
 # FAQ
 
+> How to make motion capture work?
+
+1. No loose clothing
+2. No solid color clothes
+3. Keep the full body in the image, no half body
+4. Keep the camera static
+
 > ImportError: cannot import name 'OSMesaCreateContextAttribs' from 'OpenGL.osmesa' (/home/qing/miniconda3/envs/easymocap/lib/python3.9/site-packages/OpenGL/osmesa/__init__.py)
 
 Check [Install pyrender in a server:](https://chingswy.github.io/easymocap-public-doc/install/install_vis3d.html)

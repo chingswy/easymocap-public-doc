@@ -16,6 +16,19 @@ nav_order: 4
 
 Record the video by yourself or [download from YouTube](./capture_youtube.md)
 
+## Prepare SPIN models
+
+Download pretrained SPIN model [here](http://visiondata.cis.upenn.edu/spin/model_checkpoint.pt) and place it to `data/models/spin_checkpoints.pt`.
+
+Fetch the extra data [here](http://visiondata.cis.upenn.edu/spin/data.tar.gz) and place the `smpl_mean_params.npz` to `data/models/smpl_mean_params.npz`.
+
+```bash
+mkdir -p data/models
+wget -O data/models/spin_checkpoints.pt http://visiondata.cis.upenn.edu/spin/model_checkpoint.pt
+wget -c http://visiondata.cis.upenn.edu/spin/data.tar.gz
+# data/models/smpl_mean_params.npz
+```
+
 ## Extract keypoints
 
 See [prepare keypoints](./keypoints.md#extract-keypoints)

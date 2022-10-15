@@ -88,3 +88,32 @@ Capture a static scene with multiple person and calibrate them with colmap.
 ```bash
 python3 apps/calibration/calib_sparse_by_colmap.py ${root}/human519 --init ${root}/ground1f --out /mnt/data2/shuai/calib-zjumocap --colmap ${colmap}
 ```
+
+# Studio + multiple sparse videos
+
+- **When use this:** sparse cameras, hard to initialize for colmap;
+- **Idea:** Merge features from multiple frames => calibrate with colmap => scale and align with chessboard 
+- Here you can find the [example data]().
+
+```bash
+${root}
+├── 506
+├── 508
+└── ground1f
+```
+
+## Run colmap
+
+```bash
+python3 apps/calibration/calib_pycolmap.py ${root} ${root}/calib --share_camera --step 100 --seqs 506 508
+$colmap gui --database_path ${root}/calib/merged/database.db --image_path ${root}/calib/merged/images --import_path ${root}/calib/merged/sparse/0
+```
+
+## Align with the chessboard
+
+```bash
+python3 apps/calibration/detect_chessboard.py ${root}/ground1f --out ${root}/ground1f/output --pattern 9,6 --grid 0.1
+python3 apps/calibration/align_colmap_ground.py ${root}/calib/merged/sparse/0 ${root}/colmap-align --plane_by_chessboard ${root}/ground1f --scale2d 0.5
+cp ${root}/colmap-align/*.yml ${root}/506
+cp ${root}/colmap-align/*.yml ${root}/508
+```

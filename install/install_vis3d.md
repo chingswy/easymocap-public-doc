@@ -41,8 +41,8 @@ sudo apt install -f
 ```bash
 mkdir -p 3rdparty
 cd 3rdparty
-git clone https://github.com/mmatl/pyopengl.git
-python3 -m pip uninstall pyopengl --depth=1
+git clone https://github.com/mmatl/pyopengl.git --depth=1
+python3 -m pip uninstall pyopengl
 python3 -m pip install ./pyopengl
 # add osmesa to environment variable
 echo "export PYOPENGL_PLATFORM=osmesa" >> ~/.zshrc

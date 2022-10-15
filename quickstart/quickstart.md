@@ -12,6 +12,7 @@ has_children: true
 {:toc}
 ---
 
+# Demo for Motion Capture
 ## Demo on multiple calibrated cameras
 
 Download our demo dataset [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/ESnS1ix5LtxMqV_MWXQJMM4BoxRt5NQ5RmkYo4d5iZueAQ?e=shtmUJ) and extract the dataset. If you want to run this code on your own dataset, see [Prepare Your MoCap Dataset](./prepare_mocap.md) for more details.
@@ -38,7 +39,7 @@ Optionally, you can change the mode for other models:
 |Results|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-vposer.mp4" type="video/mp4"></video>|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-handl.mp4" type="video/mp4"></video>|
 
 {: .note }
-Our method only takes 12 seconds to optimize the SMPL model of 800 frames. As rendering the results takes the longest time, you can add flag ` --disable_vismesh` to skip this.
+Our method only takes 30 seconds to optimize the SMPL model of 800 frames. As rendering the results takes the longest time, you can add flag ` --disable_vismesh` to skip this.
 
 ## Demo on monocular videos
 
@@ -89,6 +90,27 @@ python3 apps/demo/mocap.py ${data} --work mirror --fps 30 --vis_scale 0.5
     <sup>Videos come from <a href="https://www.youtube.com/watch?v=hVDPS-f6K5o">Youtube</a>.</sup>
 </div>
 
+# Demo for Novel View Synthesis
+
+## Demo for NeuralBody
+
+
+Download example dataset [here]() and extract the dataset.
+
+```bash
+data=/path/to/data
+# Train Neuralbody:
+python3 apps/neuralbody/demo.py ${data} --mode neuralbody --gpus 0,
+# Render Neuralbody:
+python3 apps/neuralbody/demo.py ${data} --mode neuralbody --gpus 0, --demo
+```
+
+Full step of motion capture and data preparation:
+```bash
+# motion capture
+python3 apps/demo/mocap.py ${data} --work lightstage-dense-unsync --subs_vis 01 07 13 19 --disable_crop
+
+```
 <!-- ## Demo on static mesh
 
 Download example mesh [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/Ea1qJYUnhcJLiQEZIHd6atYBKeYKVWNEHAw23dpAGNKQwg?e=taa4KU) and extract the dataset.

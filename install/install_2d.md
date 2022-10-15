@@ -15,6 +15,8 @@ nav_order: 1
 
 ## Install OpenPose
 
+Linux:
+
 ```bash
 git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git --depth 1
 cd openpose
@@ -30,7 +32,15 @@ make -j8
 
 ## Install Yolov4+HRNet
 
-Download model weight of HRNet
+Download model weight of `yolov4`:
+
+```bash
+mkdir -p data/models
+wget -c https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights
+mv yolov4.weights data/models
+```
+
+Download `pose_hrnet_w48_384x288.pth` from (OneDrive)[https://1drv.ms/f/s!AhIXJn_J-blW231MH2krnmLq5kkQ]
 
 ## Install MediaPipe
 

@@ -98,7 +98,7 @@ Currently, ngp only supports cameras with the same camera intrinsics.
 
 ```bash
 # convert the data
-python3 apps/calibration/check_calib_with_ngp.py ${root}/human1f --camera ${root}/colmap-align --out ${root}/ngp-human1f --aabb 4
+python3 apps/calibration/easymocap2nerf.py ${root}/human1f --out ${root}/ngp-human1f --aabb_scale 4 --frame 0
 # train and visualize ngp
 cd 3rdparty/instant-ngp
 data=${root}/human1f
