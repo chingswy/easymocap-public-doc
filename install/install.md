@@ -34,6 +34,52 @@ python3 -m pip install pyrender
 python setup.py develop
 ```
 
+## Prepare SMPL models
+
+Download and prepare the needed models as follows. If you just use SMPL model, you can place the `smplv1.1.0` here.
+
+To download the SMPL model go to this(version 1.1.0) project website and register to get access to the downloads section. After the downloading, place and extract it at `data/bodymodels/`:
+
+```bash
+data/bodymodels
+└── SMPL_python_v.1.1.0
+    └── smpl
+        ├── __init__.py
+        ├── models
+        │   ├── basicmodel_f_lbs_10_207_0_v1.1.0.pkl
+        │   ├── basicmodel_m_lbs_10_207_0_v1.1.0.pkl
+        │   └── basicmodel_neutral_lbs_10_207_0_v1.1.0.pkl
+        └── smpl_webuser
+```
+
+Other models are optional.
+
+```bash
+./data/bodymodels
+├── FLAME2020
+│   ├── flame_dynamic_embedding.npy
+│   ├── FLAME_FEMALE.pkl
+│   ├── FLAME_MALE.pkl
+│   ├── FLAME_NEUTRAL.pkl
+│   ├── flame_static_embedding.pkl
+│   └── Readme.pdf
+├── manov1.2
+│   ├── MANO_LEFT.pkl
+│   └── MANO_RIGHT.pkl
+├── smplhv1.2
+│   ├── female
+│   ├── info.txt
+│   ├── LICENSE.txt
+│   ├── male
+│   └── neutral
+├── SMPL_python_v.1.1.0
+│   └── smpl
+└── vposer_v02
+    ├── snapshots
+    ├── V02_05.log
+    └── V02_05.yaml
+```
+
 
 ## Install EasyMocap Step-by-Step
 
@@ -56,7 +102,7 @@ python3 setup.py develop
 ## Install PyTorch
 
 {: .note }
-You can install EasyMocap to your current PyTorch environment. Most versions are supported.
+You can install EasyMocap to your current PyTorch environment. Most versions are supported. You can find all versions [here](https://download.pytorch.org/whl/torch_stable.html)
 
 Simply create a conda environment and activate it.
 
@@ -96,7 +142,10 @@ For cuda 10.1:
 ```bash
 conda create -n easymocap python=3.7 -y
 conda activate easymocap
-python3 -m pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101
+wget -c https://download.pytorch.org/whl/cu101/torch-1.7.1%2Bcu101-cp37-cp37m-linux_x86_64.whl
+wget -c https://download.pytorch.org/whl/cu101/torchvision-0.8.2%2Bcu101-cp37-cp37m-linux_x86_64.whl
+python3 -m pip install ./torch-1.7.1+cu101-cp37-cp37m-linux_x86_64.whl
+python3 -m pip install ./torchvision-0.8.2+cu101-cp37-cp37m-linux_x86_64.whl
 ```
 
 
