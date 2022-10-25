@@ -63,6 +63,48 @@ has_children: true
     <sup>Video comes from 8 GoPro cameras.</sup>
 </div>
 
+Download the [example data](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/EUrwsDgin4JKlxtsXY_qOcUBozki-kUY65-9BOvd2-AzbQ?e=OOVqCF). For convenient downloads, we just upload the compressed videos, you should first extract images from the videos:
+
+```bash
+data=<path/to/example/data>
+# extract the images
+python3 apps/preprocess/extract_image.py ${data}
+```
+
+Then you should extract the vertices from the SMPL parameters:
+
+```bash
+python3 apps/postprocess/write_vertices.py ${data}/output-smpl-3d/smpl ${data}/output-smpl-3d/vertices --cfg_model ${data}/output-smpl-3d/cfg_model.yml --mode vertices
+```
+
+
+### Install
+
+First you should install the `easymocap` environment. This project depends on: `pytorch-lightning`, `spconv`. See `requirements_neuralbody.txt` for more details.
+
+```bash
+pip install -r requirements_neuralbody.txt
+```
+
+### Train
+
+```bash
+data=/path/to/dataset
+# Recommand training with 4x3090
+python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --opts gpus 0,1,2,3
+# Reduce the number of rays if you train with RTX 1080Ti/3060
+python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --opts gpus 0, data_share_args.sample_args.nrays 1024
+```
+
+### Demo
+
+```bash
+# render with 4x3090
+python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --opts gpus 0,1,2,3 --demo
+# (not recommand)
+python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --opts gpus 0, data_share_args.sample_args.nrays 1024 --demo
+```
+
 <!-- 
 ```bash
 # training

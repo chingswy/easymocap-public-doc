@@ -12,7 +12,7 @@ In this tutorial, we will show how to make a novel view synthesis with fantasy e
 
 ## Capture
 
-Capture the videos with multiple cameras, rounghly synchronize them. Here we show the [example data](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/EUrwsDgin4JKlxtsXY_qOcUBozki-kUY65-9BOvd2-AzbQ?e=e1iG7S).
+Capture the videos with multiple cameras, rounghly synchronize them. Here we show the [example data](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/EUrwsDgin4JKlxtsXY_qOcUBozki-kUY65-9BOvd2-AzbQ?e=OOVqCF).
 
 <table cellspacing="0">
     <thead>
