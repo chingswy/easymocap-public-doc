@@ -91,18 +91,18 @@ pip install -r requirements_neuralbody.txt
 ```bash
 data=/path/to/dataset
 # Recommand training with 4x3090
-python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --opts gpus 0,1,2,3
+python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --gpus 0,1,2,3
 # Reduce the number of rays if you train with RTX 1080Ti/3060
-python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --opts gpus 0, data_share_args.sample_args.nrays 1024
+python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --gpus 0, data_share_args.sample_args.nrays 1024
 ```
 
 ### Demo
 
 ```bash
 # render with 4x3090
-python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --opts gpus 0,1,2,3 --demo
+python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --gpus 0,1,2,3 --demo
 # (not recommand)
-python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --opts gpus 0, data_share_args.sample_args.nrays 1024 --demo
+python3 apps/neuralbody/demo.py --mode soccer1_6 ${data} --gpus 0, data_share_args.sample_args.nrays 1024 --demo
 ```
 
 <!-- 
