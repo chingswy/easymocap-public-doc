@@ -10,22 +10,23 @@ nav_order: 210
 
 - **When use this:** sparse cameras, hard to calibrate for colmap;
 - **Idea:** Use an extra phone to record the scene.
-- Here you can find the [example data](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/EWsM-G3mEi5Gt-Xs7a7bJqIBqd_1FK__9_HmFCvvBGrPTg?e=IsZG9h).
+- Here you can find the [example data]().
 
 ## Capture 
 
 <div align="center">
-    <img src="assets/wild-sparse-background1f.jpg" width="50%">
+    <img src="assets/wild-sparse-background1f.jpg" width="90%">
     <br>
     <sup>background</sup>
     <br>
-    <img src="assets/wild-sparse-ground1f.jpg" width="50%">
+    <img src="assets/wild-sparse-ground1f.jpg" width="90%">
     <br>
     <sup>ground</sup>
     <br>
-    <img src="assets/studio-sparse-ground1f.jpg" width="50%">
+    <video width="90%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="assets/wild-sparse-scan.mp4" type="video/mp4">
+    </video>
     <br>
-    <sup>ground</sup>
+    <sup>scan</sup>
 </div>
 
 
