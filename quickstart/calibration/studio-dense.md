@@ -9,6 +9,8 @@ nav_order: 100
 # Studio + multiple dense
 
 - **When use this:** dense cameras, simply calibrate by colmap;
+- **Idea:** Use texture human body to calibrate the dense rig.
+- Example data: [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/EdgcjjF1kFpJkoLtsbl89sABFcBOy8kWSoB7qI5oUDiP8Q?e=xYVyLO)
 
 ### Capture
 
