@@ -1,3 +1,13 @@
+安装系统级依赖：
+
+```bash
+sudo apt-get install ruby-full
+#wget -c https://rubygems.org/rubygems/rubygems-3.4.10.zip 
+#unzip rubygems-3.4.10.zip
+#cd rubygems-3.4.10
+sudo gem update --system
+```
+
 # Build local
 
 ```bash
