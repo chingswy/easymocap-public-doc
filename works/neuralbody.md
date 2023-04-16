@@ -6,7 +6,7 @@ grand_parent: Works
 nav_order: 3
 ---
 
-# Totorial for capturing your own datasets
+# Tutorial for capturing your own datasets
 
 In this tutorial, we show how to capture your datasets with multiple cameras.
 
@@ -24,6 +24,12 @@ We recommend to calibrate as this [pipeline]().
 # Reconstruct the human
 python3 apps/demo/mocap.py ${data} --work mvmp-wild --ranges 0 300 1 --subs_vis 1 3 5 7 --pids 0 1 2 3 4 5
 ```
+
+```bash
+python3 apps/postprocess/write_vertices.py ${data}/output-smpl-3d/smpl ${data}/output-smpl-3d/vertices --cfg_model ${data}/output-smpl-3d/cfg_model.yml --mode vertices
+python3 apps/postprocess/render.py ${data} --exp output-smpl-3d --mode instance-d0.05 --ranges 0 1400 1
+```
+
 
 <table cellspacing="0">
     <thead>
