@@ -206,3 +206,30 @@ disappear3:
 
 {% include_relative video.html source="multinb-code/clip5.mp4" title="clip5" width="60%" %}
 
+
+## Demo for multi-objects
+
+### 1. Get the object detections
+
+If your object can not be detected with common object detectors, please annotate some data and train a custom yolo.
+
+```bash
+python3 train.py --img 640 --batch 16 --epochs 200 --data data/anyobject.yml --cfg models/yolov5m.yaml --weights /nas/share/yolo/yolov5m.pt --name object
+```
+
+Edit the `data/anyobject.yml`:
+
+```yaml
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: /nas/home/shuaiqing/object  # dataset root dir
+train: images  # train images (relative to 'path') 128 images
+val: images  # val images (relative to 'path') 128 images
+# test:  # test images (optional)
+
+# Classes
+nc: 1  # number of classes
+names: ['object'] # class names
+```
+
+### 2. Detect and Triangulate the detections
+
