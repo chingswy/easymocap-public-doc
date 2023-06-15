@@ -4,13 +4,12 @@ title: EasyMocap
 nav_order: 1
 ---
 
-# EasyMocap
 
-<div align="left">
+<div align="center">
     <img src="images/logo.png" width="60%">
 </div>
 
-**EasyMocap** is an open-source toolbox for **markerless human motion capture** from RGB videos. In this project, we provide a lot of motion capture demos in different settings.
+**EasyMoCap** is an open-source toolbox designed for **markerless human motion capture** from RGB videos. This project offers a wide range of motion capture methods across various settings.
 
 ![python](https://img.shields.io/github/languages/top/zju3dv/EasyMocap)
 ![star](https://img.shields.io/github/stars/zju3dv/EasyMocap?style=social)
@@ -19,38 +18,41 @@ nav_order: 1
 
 ## Core features
 
-### Multiple views of a single person
+### MoCap Anywhere
 
 [![report](https://img.shields.io/badge/quickstart-green)](./doc/quickstart.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Cyvu_lPFUajr2RKt6yJIfS3HQIIYl6QU?usp=sharing)
 
-This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^pavlakos2019]/MANO[^romero2017] model to capture body+hand+face poses from multiple views.
+We provided the first **open-source** and **practical** method to recover challenging human motion from a small number of calibrated cameras. 
+<!-- This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^pavlakos2019]/MANO[^romero2017] model to capture body+hand+face poses from multiple views. -->
 
 <div align="center">
-    <img src="https://github.com/zju3dv/EasyMocap/raw/master/doc/feng/mv1pmf-smplx.gif" width="80%">
+    <!-- <img src="./develop/assets/01_triangulate_output.mp4" width="80%"> -->
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="develop/assets/02_fitsmpl_output.mp4" type="video/mp4">
+    </video>
     <br>
-    <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/mv1p-dance-smpl.gif" width="80%">
-    <br>
-    <sup>Videos are from ZJU-MoCap, with 23 calibrated and synchronized cameras.</sup>
+    <sup>Video are captured outdoors using 9 smartphones. Compared to marker-based motion capture conducted in a studio, our method does not require additional equipment and can be performed in outdoor settings.</sup>
 </div>
 
-<div align="center">
+<!-- <div align="center">
     <img src="https://github.com/zju3dv/EasyMocap/raw/master/doc/feng/mano.gif" width="80%">
     <br>
     <sup>Captured with 8 cameras.</sup>
-</div>
+</div> -->
 
 ### Internet video
 
-This part is the basic code for fitting SMPL[^loper2015] with 2D keypoints estimation[^cao2018][^hrnet] and CNN initialization[^kolotouros2019].
+We also provide a more general motion capture solution for **internet videos**. Our method excels at accurately estimating human motion with robustness.
 
-<div align="center">
+<!-- This part is the basic code for fitting SMPL[^loper2015] with 2D keypoints estimation[^cao2018][^hrnet] and CNN initialization[^kolotouros2019]. -->
+
+<!-- <div align="center">
     <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="videos/1v1p-test-cxk.mp4" type="video/mp4">
     </video>
     <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="videos/1v1p-test-wa.mp4" type="video/mp4">
     </video>
     <br>
     <sup>Videos come from <a href="https://www.youtube.com/watch?v=GLu5YwiAtC4">Youtube</a> and <a href="https://www.bilibili.com/video/BV12X4y1c7AD?p=1">Bilibili</a>.</sup>
-</div>
+</div> -->
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/23EfsN7vEOA%2B003170%2B003670.gif" width="80%">
@@ -97,7 +99,7 @@ This part is the basic code for fitting SMPL[^loper2015] with 2D keypoints estim
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/nvs_mp_soccer1_6_rgb.gif" width="80%"><br/>
-    <sup>Novel view synthesis for human interaction(coming soon)</sup>
+    <sup>Novel view synthesis for human interaction</sup>
 </div>
 
     
