@@ -63,6 +63,8 @@ We use `--subs` to specify the selected video.
 
 Similarly, we can fit a MANO model to monocular videos, and this extension is straightforward.
 
+The example dataset can be download from [03_fitmono/hand.zip](http://gofile.me/66p77/5bnFUgpmq). After downloading, unzip it to the `data/examples` folder.
+
 ||Body|Hand|
 |----|----|----|
 |2D Keypoints|yolo+HRNet|2D Hand Network|
@@ -73,6 +75,7 @@ More details can be found in `config/1v1p/hand_detect_finetune.yml`.
 Running the code:
 
 ```bash
+data=data/examples/hand
 emc --data config/datasets/svimage.yml --exp config/1v1p/hand_detect_finetune.yml --root ${data} --ranges 0 1800 1 --subs video
 ```
 
@@ -89,6 +92,8 @@ emc --data config/datasets/svimage.yml --exp config/1v1p/hand_detect_finetune.ym
 
 **Insight**: Even when the hand is occluded by the object, we can assume the hand's pose remains stationary. By optimizing a globally consistent pose, we can reduce the ambiguity of monocular cues and minimize errors introduced by occlusion.
 
+The example dataset can be download from [03_fitmono/hand_fix_example.zip](http://gofile.me/66p77/5bnFUgpmq). After downloading, unzip it to the `data/examples` folder.
+
 **Code**: We add this part into `at_final`:
 
 ```yaml
@@ -102,6 +107,7 @@ emc --data config/datasets/svimage.yml --exp config/1v1p/hand_detect_finetune.ym
 Running the code:
 
 ```bash
+data=data/examples/3_Giuliano
 emc --data config/datasets/svimage.yml --exp config/1v1p/fixhand.yml --root ${data} --ranges 0 1800 1
 ```
 
