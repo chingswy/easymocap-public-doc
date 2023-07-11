@@ -34,6 +34,28 @@ python3 -m pip install pyrender
 python setup.py develop
 ```
 
+### 2023.06.30 Update
+
+`py39` + `cu116` + `torch 1.12.0`
+
+```bash
+git clone https://github.com/zju3dv/EasyMocap.git
+conda create -n easymocap python=3.9 -y
+conda activate easymocap
+wget -c https://download.pytorch.org/whl/cu116/torch-1.12.0%2Bcu116-cp39-cp39-linux_x86_64.whl
+python3 -m pip install ./torch-1.12.0+cu116-cp39-cp39-linux_x86_64.whl
+wget -c https://download.pytorch.org/whl/cu116/torchvision-0.13.0%2Bcu116-cp39-cp39-linux_x86_64.whl
+python3 -m pip install ./torchvision-0.13.0+cu116-cp39-cp39-linux_x86_64.whl
+python -m pip install -r requirements.txt
+pip install spconv-cu116
+# install pyrender if you have a screen
+python3 -m pip install pyrender
+python setup.py develop
+```
+
+## 
+
+
 ## Prepare SMPL models
 
 Download and prepare the needed models as follows. If you just use SMPL model, you can place the `smplv1.1.0` here.

@@ -20,7 +20,8 @@ nav_order: 1
 
 ### MoCap Anywhere
 
-[![report](https://img.shields.io/badge/quickstart-green)](./doc/quickstart.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Cyvu_lPFUajr2RKt6yJIfS3HQIIYl6QU?usp=sharing)
+[![report](https://img.shields.io/badge/quickstart-green)](./develop/02_fitsmpl.html)
+ <!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Cyvu_lPFUajr2RKt6yJIfS3HQIIYl6QU?usp=sharing) -->
 
 We provided the first **open-source** and **practical** method to recover challenging human motion from a small number of calibrated cameras. 
 <!-- This is the basic code for fitting SMPL[^loper2015]/SMPL+H[^romero2017]/SMPL-X[^pavlakos2019]/MANO[^romero2017] model to capture body+hand+face poses from multiple views. -->
@@ -40,6 +41,8 @@ We provided the first **open-source** and **practical** method to recover challe
 </div> -->
 
 ### Internet video
+
+[![report](https://img.shields.io/badge/quickstart-green)](./develop/03_fitsmpl_monocular.html)
 
 We also provide a more general motion capture solution for **internet videos**. Our method excels at accurately estimating human motion with robustness.
 
@@ -62,7 +65,8 @@ We also provide a more general motion capture solution for **internet videos**. 
 
 ### Internet video with a mirror
 
-[![report](https://img.shields.io/badge/CVPR21-mirror-red)](https://arxiv.org/pdf/2104.00340.pdf) [![quickstart](https://img.shields.io/badge/quickstart-green)](https://github.com/zju3dv/Mirrored-Human)
+[![report](https://img.shields.io/badge/CVPR21-mirror-red)](https://arxiv.org/pdf/2104.00340.pdf) 
+<!-- [![quickstart](https://img.shields.io/badge/quickstart-green)](https://github.com/zju3dv/Mirrored-Human) -->
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/zju3dv/Mirrored-Human/main/doc/assets/smpl-avatar.gif" width="80%">
@@ -73,7 +77,8 @@ We also provide a more general motion capture solution for **internet videos**. 
 
 ### Multiple Internet videos with a specific action (Coming soon)
 
-[![report](https://img.shields.io/badge/ECCV20-imocap-red)](https://arxiv.org/pdf/2008.07931.pdf) [![quickstart](https://img.shields.io/badge/quickstart-green)](./doc/todo.md)
+[![report](https://img.shields.io/badge/ECCV20-imocap-red)](https://arxiv.org/pdf/2008.07931.pdf) 
+<!-- [![quickstart](https://img.shields.io/badge/quickstart-green)](./develop/) -->
 
 <div align="center">
     <img src="https://github.com/zju3dv/EasyMocap/raw/master/doc/imocap/imocap.gif" width="80%"><br/>
@@ -82,23 +87,29 @@ We also provide a more general motion capture solution for **internet videos**. 
 
 ### Multiple views of multiple people
 
-[![report](https://img.shields.io/badge/CVPR19-mvpose-red)](https://arxiv.org/pdf/1901.04111.pdf) [![quickstart](https://img.shields.io/badge/quickstart-green)](./doc/mvmp.md)
+[![report](https://img.shields.io/badge/CVPR19-mvpose-red)](https://arxiv.org/pdf/1901.04111.pdf) 
+[![quickstart](https://img.shields.io/badge/quickstart-green)](./develop/04_multiperson.md)
 
 <div align="center">
-    <img src="https://github.com/zju3dv/EasyMocap/raw/master/doc/assets/mvmp1f.gif" width="80%"><br/>
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./develop/assets/04_ballet.mp4" type="video/mp4">
+    </video>
+    <br/>
     <sup>Captured with 8 consumer cameras</sup>
 </div>
 
 ### Novel view synthesis from sparse views
-[![report](https://img.shields.io/badge/CVPR21-neuralbody-red)](https://arxiv.org/pdf/2012.15838.pdf) [![quickstart](https://img.shields.io/badge/quickstart-green)](https://github.com/zju3dv/neuralbody)
+[![report](https://img.shields.io/badge/CVPR21-neuralbody-red)](https://arxiv.org/pdf/2012.15838.pdf) 
+<!-- [![quickstart](https://img.shields.io/badge/quickstart-green)](https://github.com/zju3dv/neuralbody) -->
 
-<div align="center">
+<!-- <div align="center">
     <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/female-ballet.gif" width="80%"><br/>
     <sup>Novel view synthesis for chanllenge motion(coming soon)</sup>
-</div>
+</div> -->
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/chingswy/Dataset-Demo/main/EasyMocap/nvs_mp_soccer1_6_rgb.gif" width="80%"><br/>
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./works/multinb/demo_soccer1-6.mp4" type="video/mp4">
+    </video>
+    <br/>
     <sup>Novel view synthesis for human interaction</sup>
 </div>
 
@@ -152,10 +163,6 @@ If you would like to download the ZJU-Mocap dataset, please sign the [agreement]
     <br>
     <sup>Annotator for bounding box, keypoints and mask</sup>
 </div>
-
-### Other
-- [Pose guided synchronization](./doc/todo.md) (comming soon)
-- [Exporting of multiple data formats(bvh, asf/amc, ...)](./doc/02_output.md)
 
 ## Updates
 - 12/25/2021: Support mediapipe keypoints detector.
