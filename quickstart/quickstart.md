@@ -12,6 +12,9 @@ has_children: true
 {:toc}
 ---
 
+{: .note }
+Please check [EasyMoCap v0.3](../develop/develop.html) for more details.
+
 # Demo for Motion Capture
 ## Demo on multiple calibrated cameras
 

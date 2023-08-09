@@ -58,3 +58,13 @@ Fit SMPL model to monocular 2D keypoint input.
 |SMPL|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./assets/03_fitmono_smpl.mp4" type="video/mp4"></video>|
 |MANO|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./assets/03_fitmono_anymano.mp4" type="video/mp4"></video>|
 |Fixed MANO|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./assets/03_fitmono_mano.mp4" type="video/mp4"></video>|
+
+### [4. Multiple Person](./04_multiperson.html)
+
+Fit SMPL model to multiple person from multi-view inputs.
+
+|Model|Output|
+|----|----|
+|Ballet|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./assets/04_ballet.mp4" type="video/mp4"></video>|
+|Soccer|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./assets/04_soccer1.mp4" type="video/mp4"></video>|
+
