@@ -6,7 +6,7 @@ nav_order: 1
 mathjax: true
 ---
 
-# Calibration
+# Camera Parameters
 {: .no_toc }
 
 1. TOC

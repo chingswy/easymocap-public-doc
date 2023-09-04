@@ -18,62 +18,41 @@ Please check [EasyMoCap v0.3](../develop/develop.html) for more details.
 # Demo for Motion Capture
 ## Demo on multiple calibrated cameras
 
-Download our demo dataset [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/ESnS1ix5LtxMqV_MWXQJMM4BoxRt5NQ5RmkYo4d5iZueAQ?e=shtmUJ) and extract the dataset. If you want to run this code on your own dataset, see [Prepare Your MoCap Dataset](./prepare_mocap.md) for more details.
+The example dataset can be download from [01_triangulate/street_dance.zip](http://gofile.me/66p77/5bnFUgpmq). After downloading, unzip it to the `data/examples` folder.
 
 ```bash
-data=/path/to/dataset
-python3 apps/demo/mocap.py ${data} --work lightstage-dense-smplh --subs_vis 01 --ranges 0 800 1
+data=data/examples/street_dance
+emc --data config/datasets/mvimage.yml --exp config/mv1p/detect_triangulate_fitSMPL.yml --root ${data} --subs_vis 07 01 05 03
 ```
 
-The visualization results can be found in `${data}/output-mv1p-smplh/smplmesh.mp4`
+The results can be found in `output/detect_triangulate_fitSMPL`.
 
 <div align="center">
-    <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-smplh.mp4" type="video/mp4">
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./assets/02_fitsmpl_output.mp4" type="video/mp4">
     </video>
     <br>
-    <sup>Video comes from our ZJU-MoCap dataset with 19 calibrated and synchronized cameras.</sup>
+    <sup>Video are captured outdoors using 9 smartphones.</sup>
 </div>
 
-Optionally, you can change the mode for other models:
-
-|Model|SMPL|MANO|
-|:----:|:----:|:----:|
-|Mode|--work lightstage-dense-smpl|--work lightstage-dense-manol|
-|Results|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-vposer.mp4" type="video/mp4"></video>|<video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/mocap-feng-handl.mp4" type="video/mp4"></video>|
 
 {: .note }
-Our method only takes 30 seconds to optimize the SMPL model of 800 frames. As rendering the results takes the longest time, you can add flag ` --disable_vismesh` to skip this.
+Our method only takes 30 seconds to optimize the SMPL model of 800 frames. As rendering the results takes the longest time, you can add flag ` --skip_vis` to skip this.
 
 ## Demo on monocular videos
 
-Download demo dataset [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/ET-rr5vcXQ9DrORrmmRlOpgBttcEtdmL-tZAx5J124_jiw?e=tC96Mo) and extract the dataset.
+The example dataset can be download from [03_fitmono/internet-rotate.zip](http://gofile.me/66p77/5bnFUgpmq). After downloading, unzip it to the `data/examples` folder.
 
 ```bash
-data=<path/to/data>
-python3 apps/demo/mocap.py ${data} --work internet
+data=data/examples/internet-rotate
+emc --data config/datasets/svimage.yml --exp config/1v1p/hrnet_pare_finetune.yml --root ${data} --ranges 0 500 1 --subs 23EfsN7vEOA+003170+003670
 ```
 
-<div align="center">
-    <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-cxk.mp4" type="video/mp4">
-    </video>
-    <video width="49%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-wa.mp4" type="video/mp4">
-    </video>
-    <br>
-    <sup>Videos come from <a href="https://www.youtube.com/watch?v=GLu5YwiAtC4">Youtube</a> and <a href="https://www.bilibili.com/video/BV12X4y1c7AD?p=1">Bilibili</a>.</sup>
-</div>
-
-Download the challenging data [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/s_q_zju_edu_cn/EYPPCKzPEIBNrfagBryBJsUBdQ9Sv-y_CicaNPlSSQud_A?e=pJpIQv) and extract it.
-
-```bash
-data=<path/to/data>
-python3 apps/demo/mocap.py ${data} --work internet-rotate --fps 30 --render_side
-```
 
 <div align="center">
-    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../videos/1v1p-test-yusheng.mp4" type="video/mp4">
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./assets/03_fitmono_smpl.mp4" type="video/mp4">
     </video>
     <br>
-    <sup>Videos come from <a href="https://www.youtube.com/watch?v=23EfsN7vEOA">Youtube</a>.</sup>
+    <sup>The raw video is from <a href="https://www.youtube.com/watch?v=23EfsN7vEOA">Youtube</a>.</sup>
 </div>
 
 ## Demo on monocular+mirror videos

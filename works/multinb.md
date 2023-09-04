@@ -2,7 +2,7 @@
 layout: default
 title: Novel View Synthesis of Human Interactions From Sparse Multi-view Videos
 parent: Works
-nav_order: 1
+nav_order: 2
 has_children: true
 ---
 

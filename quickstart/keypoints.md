@@ -123,30 +123,6 @@ This mode will first perform human detection and second run the HRNet on the cro
 python3 apps/preprocess/extract_keypoints.py ${data} --mode yolo-hrnet & python3 apps/preprocess/extract_keypoints.py ${data} --mode feetcrop --openpose ${openpose} --force
 ```
 
-## Keypoints definition
-### OpenPose
-
-|name||
-|----|----|
-|body|![body](https://raw.githubusercontent.com/CMU-Perceptual-Computing-Lab/openpose/master/.github/media/keypoints_pose_25.png) |
-|hand| ![hand](https://raw.githubusercontent.com/CMU-Perceptual-Computing-Lab/openpose/master/.github/media/keypoints_hand.png) |
-|face| ![face](https://raw.githubusercontent.com/CMU-Perceptual-Computing-Lab/openpose/master/.github/media/keypoints_face.png) |
-
-### Mediapipe
-
-|name||
-|----|----|
-|body|![body](https://google.github.io/mediapipe/images/mobile/pose_tracking_full_body_landmarks.png) |
-|hand| ![hand](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png) | 
-|face| ![face](../images/dataset/mediapipe-facemesh.jpg) |
-
-### SMPL
-
-|name||
-|----|----|
-|SMPL[^smpl]|![body](../images/dataset/SMPL.png) |
-
-
 [^smpl]: Loper, Matthew, et al. "SMPL: A skinned multi-person linear model." ACM transactions on graphics (TOG) 34.6 (2015): 1-16.
 
 
