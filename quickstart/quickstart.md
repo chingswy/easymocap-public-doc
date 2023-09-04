@@ -28,7 +28,7 @@ emc --data config/datasets/mvimage.yml --exp config/mv1p/detect_triangulate_fitS
 The results can be found in `output/detect_triangulate_fitSMPL`.
 
 <div align="center">
-    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./assets/02_fitsmpl_output.mp4" type="video/mp4">
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../develop/assets/02_fitsmpl_output.mp4" type="video/mp4">
     </video>
     <br>
     <sup>Video are captured outdoors using 9 smartphones.</sup>
@@ -49,7 +49,7 @@ emc --data config/datasets/svimage.yml --exp config/1v1p/hrnet_pare_finetune.yml
 
 
 <div align="center">
-    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="./assets/03_fitmono_smpl.mp4" type="video/mp4">
+    <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""><source src="../develop/assets/03_fitmono_smpl.mp4" type="video/mp4">
     </video>
     <br>
     <sup>The raw video is from <a href="https://www.youtube.com/watch?v=23EfsN7vEOA">Youtube</a>.</sup>
