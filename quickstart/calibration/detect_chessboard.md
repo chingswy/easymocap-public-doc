@@ -38,7 +38,7 @@ Download the Web Annotation Tool.
 git clone https://github.com/chingswy/EasyAnnot.git
 ```
 
-Start the server, open the server in the browser
+Start the server, open the server in the browser: `http://0.0.0.0:2345/match_points`
 
 ```bash
 python3 app.py --root ${data}/ground1f --port 2345
